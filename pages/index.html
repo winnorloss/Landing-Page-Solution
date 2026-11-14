@@ -39,7 +39,7 @@
 
                 <div class="mapa">
                     <img src=""
-                    width="450" height="600">
+                    width="750" height="500">
                 </div>
             </div>
             
@@ -93,83 +93,96 @@
             
             
         </section>
-   
-        <section id="mi-perfil"><!--Mi perfil-->
-            <h2>Mi perfil de avisos</h2>
-            <p>Elige como quieres recibir una alerta y pruebalo antes de guardar</p>
-            <h3>1.Perfil rapido</h3>
-            <div class="tarjetas tres">
-                <article class="tarjeta">
-                    <h3>Auditivo</h3>
-                </article>
-                <article class="tarjeta">
-                    <h3>Visual</h3>
-                </article>
-                <article class="tarjeta">
-                    <h3>Cognitivo</h3>
-                </article>
-                <article class="tarjeta">
-                    <h3>Auditivo y Visual</h3>
-                </article>
+
+        <section id="mi-perfil" ><!--Mi perfil-->
+            <div class="perfil">
+                
+                <div class="perfil-config">
+                    <h2>Mi perfil de avisos</h2>
+                    <p>Elige como quieres recibir una alerta y prueba antes de guardar</p>
+                    
+                    <h3>1. Perfil rapido</h3>
+                    <div class="tarjetas cuatro">
+                        <article class="tarjeta">
+                            <h3>Auditivo</h3>
+                        </article>
+                        <article class="tarjeta">
+                            <h3>Visual</h3>
+                        </article>
+                        <article class="tarjeta">
+                            <h3>Cognitivo</h3>
+                        </article>
+                        <article class="tarjeta">
+                            <h3>Auditivo y Visual</h3>
+                        </article>
+                    </div>
+
+                    
+                    <div class="opcion">
+                        <h3>2. Canales</h3>
+                         <div class="contenedor-boton">
+                            <label for="sw-vibracion">Vibracion</label>
+                            <input type="checkbox" id="sw-vibracion" class="toggle" role="switch">
+                        </div>
+
+                        <div class="contenedor-boton">
+                            <label for="sw-luz">Destellos de luz</label>
+                            <input type="checkbox" id="sw-luz" class="toggle" role="switch">
+                        </div>
+
+                        <div class="contenedor-boton">
+                            <label for="sw-voz">Vibracion</label>
+                            <input type="checkbox" id="sw-vibracion" class="toggle" role="switch">
+                        </div>
+                    
+                        <div class="contenedor-boton">
+                            <label for="sw-texto">Texto facil de leer</label>
+                            <input type="checkbox" id="sw-texto" class="toggle" role="switch">
+                        </div>
+
+
+                        <h3>3. Tamaño de letra y contraste</h3>
+                        <div class="Barra de ajuste">
+                            <input type="range" min="10" max="30" value="16" class="slider" id="myRange">         
+                        </div>
+
+                        <div class="Contenedor de Boton">
+                            <p>Contraste alto</p>
+                            <input type="checkbox" id="sw-contraste" class="toggle">
+                            <label for="sw-contraste" class="sw-contraste"></label>
+                        </div>
+
+                        <div class="botones">
+                            <input type="button" value="Probar configuracion">
+                            <input type="button" value="Guardar">
+                        </div> 
+                    </div>
+                </div>                    
+
+
+                <aside id="vista-previa-simulacro" aria-label="Vista previa en vivo de la alerta">
+                    <p>Vista previa en vivo</p>
+                    <h3>ALERTA OFICIAL</h3>
+                    <h2>Sismo</h2>
+                    <p>Gravedad: Alta</p>
+                    <div class="vista-previa-salir">
+                        <h2>SALIR<br>de forma segura</h2>
+                    </div>
+                    <input type="button" value=" Escuchar">
+                    <input type="button" value="Ya vi el aviso">
+                </aside>
+
+
             </div>
-            <div class="opcion">
-                <div class="Contenedor de Boton">
-                    <p>Vibracion</p>
-                    <input type="checkbox" id="sw-vibracion" class="toggle">
-                    <label for="sw-vibracion" class="sw-vibracion"></label>
-                </div>
-
-                <div class="Contenedor de Boton">
-                    <p>Destellos de luz</p>
-                    <input type="checkbox" id="sw-luz" class="toggle">
-                    <label for="sw-luz" class="sw-luz"></label>
-                </div>
-
-                <div class="Contenedor de Boton">
-                    <p>Voz</p>
-                    <input type="checkbox" id="sw-voz" class="toggle">
-                    <label for="sw-voz" class="sw-voz"></label>
-                </div>
-
-                <div class="Contenedor de Boton">
-                    <p>Texto facil de leer</p>
-                    <input type="checkbox" id="sw-texto" class="toggle">
-                    <label for="sw-texto" class="sw-texto"></label>
-                </div>
-
-                <h2>Tamaño de letra y contraste</h2>
-                <div class="Barra de ajuste">
-                    <input type="range" min="10" max="30" value="16" class="slider" id="myRange">         
-                </div>
-
-                <div class="Contenedor de Boton">
-                    <p>Contraste alto</p>
-                    <input type="checkbox" id="sw-contraste" class="toggle">
-                    <label for="sw-contraste" class="sw-contraste"></label>
-                </div>
-
-                <div class="botones">
-                <input type="button" value="Probar configuracion">
-             
-                <input type="button" value="Guardar">
-            </div> 
-
-            <section id="Vista-previa-Simulacro">
-                <h3>Alerta oficial</h3>
-                <h2>Sismo</h2>
-                <p>Gravedad Alta</p>
-                <div class="vista-previa-salir">
-                    <h2>SALIR<br>de forma segura</h2>
-                </div>
-            </section>
-
         </section>
 
         <section id="simulacro"><!--Simulacro-->
             <div class="titulo-simulacro">
                 <h2>ESTO ES UN SIMULACRO - Funciona con tus preferencias</h2>
             </div>
+
             <div class="bloque-indeci">
+                <img src="../assets/images/" alt=" " width="100" height="100">
                 <h2>INDECI</h2><p>Hoy</p><h2>SISMO</h2><h3>Gravedad: Alta</h3></p>
                <div class="sub-bloque-indeci">
                 <h2>SALIR</h2><h3>de forma segura</h3>
@@ -179,17 +192,18 @@
             <div class="pasos-simulacro">
                 <h2>Pasos a seguir</h2>
                 <div class="pictograma">
-                    <p>imagen</p>
+                    <img src="../assets/images/" alt=" " width="100 " height="100 ">
                 </div>
                 <h2>Sal del edificio por la escalera</h2>
                 <div class="instrucciones">
                     <p>Respira, vas bien.Un paso a la vez</p>
-                    <input type="button" value="Atras">
-                    <input type="button" value="Siguiente">
                 </div>
+                <input type="button" value="Atras">
+                <input type="button" value="Siguiente">
             </div>
 
             <div class="lista-instrucciones">
+                <h2>Ver todas las instrucciones</h2>
                 <input type="button" value="Abrir lista de instrucciones">
             </div>
             
@@ -258,49 +272,62 @@
         <section id="contactos"><!--Contactos-->
             <h2>Contactos de confianza</h2>
             <p>Ellos sabrán cómo estas cuando tu lo indiques(max.5).</p>
-            <div class="lista-contactos">
-                <h3>Nombre Relacion Estado Accion</h3>
-            </div>
 
-            <div class="contactos">
-                <div class="contacto">
-                    <p>Contacto 1</p>
-                    <p>Familiar</p>
-                    <input type="button" value="Editar">
-                    <input type="button" value="Eliminar">
+            <div class="contactos-cuadro">
+
+                <div class="lista-contactos">
+                    <div class="fila encabezado">
+                        <p>Nombre</p>
+                        <p>Relación</p>
+                        <p>Estado</p>
+                        <p>Acción</p>
+                    </div>
+
+                    <div class="fila contacto">
+                        <p><strong>P1</strong></p>
+                        <p>Familiar</p>
+                        <p><span class="insignia">Aceptó</span></p>
+                        <input type="button" class="accion" value="Quitar" aria-label="Quitar a P1">
+                    </div>
+
+                    <div class="fila contacto">
+                        <p><strong>P2</strong></p>
+                        <p>Familiar</p>
+                        <p><span class="insignia">Pendiente</span></p>
+                        <input type="button" class="accion" value="Reenviar" aria-label="Reenviar invitación a P2">
+                    </div>
+
+                    <div class="fila contacto">
+                        <p><strong>P3</strong></p>
+                        <p>Cuidadora</p>
+                        <p><span class="insignia">Aceptó</span></p>
+                        <input type="button" class="accion" value="Quitar" aria-label="Quitar a P3">
+                    </div>
                 </div>
 
-                <div class="contacto">
-                    <p>Contacto 2</p>
-                    <p>Familiar</p>
-                    <input type="button" value="Editar">
-                    <input type="button" value="Eliminar">
+                <div class="agregar-contacto">
+                    <h3>Agregar contacto</h3>
+
+                    <label for="nombre-contacto">Nombre</label>
+                    <input type="text" id="nombre-contacto" name="nombre-contacto" autocomplete="off">
+
+                    <label for="celular-contacto">Celular o correo</label>
+                    <input type="text" id="celular-contacto" name="celular-contacto" autocomplete="off">
+
+                    <label for="relacion-contacto">Relación</label>
+                    <input type="text" id="relacion-contacto" name="relacion-contacto" autocomplete="off">
+
+                    <div class="enviar-contacto">
+                        <input type="button" value="Enviar invitación">
+                    </div>
                 </div>
 
-                <div class="contacto">
-                    <p>Contacto 3</p>
-                    <p>Cuidadora</p>
-                    <input type="button" value="Editar">
-                    <input type="button" value="Eliminar">
-                </div>
+            </div>            
+   
+            <p id="msg-contactos" role="status"></p>
 
-            </div>
-            
-            <div class="agregar-contacto">
-                <label for="nombre-contacto">Nombre</label>
-                <input type="text" id="nombre-contacto" name="nombre-contacto" placeholder="  " autocomplete="name" required>
-                <label for="celular-contacto">Celular o correo</label>
-                <input type="text" id="celular-contacto" name="celular-contacto" placeholder="  " autocomplete="email" required>
-                <label for="relacion-contacto">Relacion</label>
-                <input type="text" id="relacion-contacto" name="relacion-contacto" placeholder="  " autocomplete="name" required>
-
-                <div class="enviar-contacto">
-                    <input type="button" value="Enviar invitacion">
-                </div>
-            </div>
-
-            <div>
-                <h2>Privacidad</h2>
+            <div class="privacidad">
+                <h3>Privacidad</h3>
                 <input type="checkbox" id="compartir-ubicacion">
                 <label for="compartir-ubicacion">Compartir ubicación con contactos</label>
             </div>
@@ -310,6 +337,10 @@
             </div>
             
         </section>
+
+
+
+
 
         <section id="familiares"><!--Familiares-->
             <h2>Seguimiento de mis familiares</h2>
