@@ -251,23 +251,141 @@
                 <p>Referencias cercanas:</p>
             </div>
             <div class="descripcion-mapa-texto">
-                
-            
+                <p>...</p>
+            </div>
+            <div class="confirmacion-llegada">
+                <p>Llegaste a tu destino</p>
+            </div>
+            <div class="escuchar-ruta">
+                <input type="button" value="Escuchar ruta">
+            </div>
+            <div class="opciones-zonas">
+                <input type="button" value="Ruta alternativa">
+            </div>
         </section>
 
         <section id="contactos"><!--Contactos-->
-            <h2>Contactos</h2>
-            <p>...</p>
+            <h2>Contactos de confianza</h2>
+            <p>Ellos sabrán cómo estas cuando tu lo indiques(max.5).</p>
+            <div clas="lista-contactos">
+                <h3>Nombre Relacion Estado Accion</h3>
+            </div>
+
+            <div class="contactos">
+                <div class="contacto">
+                    <p>Contacto 1</p>
+                    <p>Familiar</p>
+                    <input type="button" value="Editar">
+                    <input type="button" value="Eliminar">
+                </div>
+
+                <div class="contacto">
+                    <p>Contacto 2</p>
+                    <p>Familiar</p>
+                    <input type="button" value="Editar">
+                    <input type="button" value="Eliminar">
+                </div>
+
+                <div class="contacto">
+                    <p>Contacto 3</p>
+                    <p>Cuidadora</p>
+                    <input type="button" value="Editar">
+                    <input type="button" value="Eliminar">
+                </div>
+
+            </div>
+            
+            <div class="agregar-contacto">
+                <label for="nombre-contacto">Nombre</label>
+                <input type="text" id="nombre-contacto" name="nombre-contacto" placeholder="  " autocomplete="name" required>
+                <label for="celular-contacto">Celular o correo</label>
+                <input type="text" id="celular-contacto" name="celular-contacto" placeholder="  " autocomplete="email" required>
+                <label for="relacion-contacto">Relacion</label>
+                <input type="text" id="relacion-contacto" name="relacion-contacto" placeholder="  " autocomplete="name" required>
+
+                <div class="enviar-contacto">
+                    <input type="button" value="Enviar invitacion">
+                </div>
+            </div>
+
+            <div>
+                <h2>Privacidad</h2>
+                <input type="checkbox" id="compartir-ubicacion">
+                <label for="compartir-ubicacion">Compartir ubicación con contactos</label>
+            </div>
+
+            <div class="guardar-contactos">
+                <input type="button" value="Guardar cambios">
+            </div>
+            
         </section>
 
         <section id="familiares"><!--Familiares-->
-            <h2>Familiares</h2>
-            <p>...</p>
-        </section>
+            <h2>Seguimiento de mis familiares</h2>
+            <div class="alerta">
+                <h3>Alerta activa: SIMSMO - Lima Centro - 14:32</h3>
+            </div>
 
-        <section id="comenzar"><!--Comenzar-->
-            <h2>Comenzar</h2>
-            <p>...</p>
+            <div class="Cronologia">
+                <ul>
+                    <li>14:32 - Alerta recibida</li>
+                    <li>14:33 - Ubicación actualizada</li>
+                    <li>14:34 - Ubicación actualizada</li>
+                    <li>14:35 - Ubicación actualizada</li>
+                </ul>
+            </div>
+
+            <div class="estado-familiar">
+                <h3>Estado de mi familiar</h3>
+                <h3>Alerta recibida</h3>
+                <h3>Estado</h3>
+                <h3>En zona afectada?</h3>
+                <div class="persona-uno">
+                    <h2>Persona 1</h2>
+                    <h2 >Hora 1</h2>
+                    <div class="estado">
+                        <p>En zona segura</p>
+                    </div>
+                    <div class="zona-afectada">
+                        <p>No</p>
+                    </div>
+                </div>
+
+                <div class="persona-dos">
+                    <h2>Persona 2</h2>
+                    <h2 >Hora 2</h2>
+                    <div class="estado">
+                        <p>En zona segura</p>
+                    </div>
+                    <div class="zona-afectada">
+                        <p>No</p>
+                    </div>
+                </div>
+
+                <div class="persona-tres">
+                    <h2>Persona 3</h2>
+                    <h2 >Hora 3</h2>
+                    <div class="estado">
+                        <p>En zona segura</p>
+                    </div>
+                    <div class="zona-afectada">
+                        <p>No</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="enviar-frase">
+                <input type="button" value="Voy por ti">
+                <input type="button" value="Quedate donde estas">
+                <input type="button" value="Estoy llegando">
+                <input type="button" value="Llama si puedes">
+            </div>
+
+            <div class="indicaciones">
+                <h2>Como acomapañar...</h2>
+                <p>...</p>
+            </div>
+                
         </section>
 
     </main>
