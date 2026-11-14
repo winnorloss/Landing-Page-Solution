@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing-Page-Alerta360</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+
+<body>
+    
+    <div class="cabecera">
+    <header>
+    <h2>Alerta360</h2>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#mi-perfil">Mi perfil</a>
+            <a href="#simulacro">Simulacro</a>
+            <a href="#zonas-seguras">Zonas seguras</a>
+            <a href="#contactos">Contactos</a>
+            <a href="#familiares">Familiares</a>
+            <a href="#comenzar">Comenzar</a>
+        </nav>
+    </header>
+    </div>
+
+
+    <main>
+        <section id="inicio"><!--Inicio-->
+
+            <h1>Una alerta de emergencia que sí puedes percibir </h1>
+            <p>Alerta360 te avisa con vibracion, luces, voz y texto facil</p> 
+            <div class="botones">
+                <input type="button" value="Configurar mi perfil">
+             
+                <input type="button" value="Probar un simulacro">
+            </div> 
+
+            <h2>Cómo te avisamos</h2> <!--Cuadros informativos 1era linea-->            
+            <div class="tarjetas cuatro">
+                <div>
+                    <article class="tarjeta">
+                        <h3>Vibración</h3>
+                        <p>Patrón propio inclusio silencio</p>
+                    </article>
+                </div>
+                
+                <div>
+                    <article class="tarjeta">
+                        <h3>Luces</h3>
+                        <p>Destellos continuos</p>
+                    </article>
+                </div>
+                
+                <div>
+                <article class="tarjeta">
+                        <h3>Voz</h3>
+                        <p>Lectura de voz alta</p>
+                    </article>
+                </div>
+                
+                <div>
+                    <article class="tarjeta">
+                        <h3>Texto fácil</h3>
+                        <p>Frases cortas y pictogramas</p>
+                    </article>
+                </div>
+            </div>
+
+            <h3> Para quién es </h3> <!--Cuadros informativos 2da linea-->
+            <div class="tarjetas tres">
+                <div>
+                    <article class="tarjeta">
+                        <h3>Auditivo</h3>
+                        <p>Avisos que se sienten y se ven</p>
+                    </article>
+                </div>
+
+                <div>
+                    <article class="tarjeta">
+                        <h3>Visual</h3>
+                        <p>Destellos continuos</p>
+                    </article>
+                </div>
+
+                <div>
+                    <article class="tarjeta">
+                        <h3>Cognitivo</h3>
+                        <p>Avisos que se sienten y se ven</p>
+                    </article>
+                </div>
+            </div>
+
+            <p>...</p>
+        </section>
+   
+        <section id="mi-perfil"><!--Mi perfil-->
+            <h2>Mi perfil de avisos</h2>
+            <p>Elige como quieres recibir una alerta y pruebalo antes de guardar</p>
+            <h3>1.Perfil rapido</h3>
+            <div class="tarjetas tres">
+                <article class="tarjeta">
+                    <h3>Auditivo</h3>
+                </article>
+                <article class="tarjeta">
+                    <h3>Visual</h3>
+                </article>
+                <article class="tarjeta">
+                    <h3>Cognitivo</h3>
+                </article>
+                <article class="tarjeta">
+                    <h3>Auditivo y Visual</h3>
+                </article>
+            </div>
+            <div class="opcion">
+                <div class="Contenedor de Boton">
+                    <p>Vibracion</p>
+                    <input type="checkbox" id="sw-vibracion" class="toggle">
+                    <label for="sw-vibracion" class="sw-vibracion"></label>
+                </div>
+
+                <div class="Contenedor de Boton">
+                    <p>Destellos de luz</p>
+                    <input type="checkbox" id="sw-luz" class="toggle">
+                    <label for="sw-luz" class="sw-luz"></label>
+                </div>
+
+                <div class="Contenedor de Boton">
+                    <p>Voz</p>
+                    <input type="checkbox" id="sw-voz" class="toggle">
+                    <label for="sw-voz" class="sw-voz"></label>
+                </div>
+
+                <div class="Contenedor de Boton">
+                    <p>Texto facil de leer</p>
+                    <input type="checkbox" id="sw-texto" class="toggle">
+                    <label for="sw-texto" class="sw-texto"></label>
+                </div>
+
+                <h2>Tamaño de letra y contraste</h2>
+                <div class="Barra de ajuste">
+                    <input type="range" min="10" max="30" value="16" class="slider" id="myRange">         
+                </div>
+
+                <div class="Contenedor de Boton">
+                    <p>Contraste alto</p>
+                    <input type="checkbox" id="sw-contraste" class="toggle">
+                    <label for="sw-contraste" class="sw-contraste"></label>
+                </div>
+
+                <div class="botones">
+                <input type="button" value="Probar configuracion">
+             
+                <input type="button" value="Guardar">
+            </div> 
+
+            <section id="Vista-previa-Simulacro">
+                <h3>Alerta oficial</h3>
+                <h2>Sismo</h2>
+                <p>Gravedad:Alta</p>
+                <div class="vista-previa-salir">
+                    <h2>SALIR<br>de forma segura</h2>
+                </div>
+            </section>
+
+
+
+        
+        
+        
+        
+        
+        
+        </section>
+
+        <section id="simulacro"><!--Simulacro-->
+            <div class="titulo-simulacro">
+                <h2>ESTO ES UN SIMULACRO - Funciona con tus preferencias</h2>
+            </div>
+            <div class="bloque-indeci">
+                <h2>INDECI</h2><p>Hoy</p><h2>SISMO</h2><h3>Gravedad: Alta</h3></p>
+               <div class="sub-bloque-indeci">
+                <h2>SALIR</h2><h3>de forma segura</h3>
+               </div> 
+            </div>
+
+            <div class="pasos-simulacro">
+                <h2>Pasos a seguir</h2>
+                <div class="pictograma">
+                    <p>imagen</p>
+                </div>
+                <h2>Sal del edificio por la escalera</h2>
+                <div class="instrucciones">
+                    <p>Respira, vas bien.Un paso a la vez</p>
+                    <input type="button" value="Atras">
+                    <input type="button" value="Siguiente">
+                </div>
+            </div>
+
+            <div class="lista-instrucciones">
+                <input type="button" value="Abrir lista de instrucciones">
+            </div>
+            
+            <div class="consejo">
+                <h2>Lee a tu ritmo</h2>
+                <p>El paso no desaparece hasta que pulses el boton "siguiente"</p>
+            </div>
+
+            <div class="recordatorio">
+                <h2>Recordatorio</h2>
+                <p>Si pasas 30seg sin acción, se repite la instrucción</p>
+            </div>
+
+            <div class="simulacro-resultado">
+                <h2>Resultado del simulacro</h2>
+                <p>Tu desempeño en el simulacro fue...</p>
+            </div>
+
+            <input type="button" value="Iniciar simulacro">
+            <input type="button" value="Ajustar preferencias">
+        </section>
+
+        <section id="zonas-seguras"><!--Zonas seguras-->
+            <h2>Zonas seguras y rutas </h2>
+            <div class="ingreso-direccion">
+                <input type="text" placeholder="Ingresa tu dirección">
+                <input type="button" value="Buscar">
+            </div>
+            
+            <div class="opciones-zonas">
+                <h2>Zona mas cercana</h2>
+                <input type="button" value="Zona segura 1">
+                <input type="button" value="Zona segura 2">
+                <input type="button" value="Zona segura 3">
+            </div>
+            <div class="mapa">
+                <p>Mapa</p>
+            </div>
+            
+            <div class="opciones-zonas">
+                <h2>Ruta en texto(paso a paso)</h2>
+                <input type="button" value="Paso 1">
+                <input type="button" value="Paso 2">
+                <input type="button" value="Paso 3">
+            </div>
+            <div class="ruta-alternativa">
+                <p>Ruta alternativa</p>
+            </div>
+            <div class="referencias">
+                <p>Referencias cercanas:</p>
+            </div>
+            <div class="descripcion-mapa-texto">
+                
+            
+        </section>
+
+        <section id="contactos"><!--Contactos-->
+            <h2>Contactos</h2>
+            <p>...</p>
+        </section>
+
+        <section id="familiares"><!--Familiares-->
+            <h2>Familiares</h2>
+            <p>...</p>
+        </section>
+
+        <section id="comenzar"><!--Comenzar-->
+            <h2>Comenzar</h2>
+            <p>...</p>
+        </section>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Alerta360. Todos los derechos reservados.</p>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>
