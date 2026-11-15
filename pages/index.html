@@ -90,6 +90,33 @@
                     <p>Avisos que se sienten y se ven</p>
                 </article>
             </div>
+            <section id="instrucciones-sin-conexion" class="bloque-wireframe" aria-labelledby="titulo-instrucciones">
+                <h2 id="titulo-instrucciones">Instrucciones esenciales (sin conexión)</h2>
+                <p>Guardadas en tu dispositivo para consultarlas aunque no haya señal.</p>
+
+                <div class="selector-emergencia" role="group" aria-label="Tipo de emergencia">
+                    <button type="button" aria-pressed="true">Sismo</button>
+                    <button type="button" aria-pressed="false">Incendio</button>
+                    <button type="button" aria-pressed="false">Inundación</button>
+                </div>
+
+                <div class="tarjetas-pasos">
+                    <article class="tarjeta tarjeta-paso">
+                        <div class="caja-imagen caja-cuadrada">Pictograma</div>
+                        <p class="paso-texto">1. Agáchate y cúbrete</p>
+                    </article>
+                    <article class="tarjeta tarjeta-paso">
+                        <div class="caja-imagen caja-cuadrada">Pictograma</div>
+                        <p class="paso-texto">2. Aléjate de las ventanas</p>
+                    </article>
+                    <article class="tarjeta tarjeta-paso">
+                        <div class="caja-imagen caja-cuadrada">Pictograma</div>
+                        <p class="paso-texto">3. Sal cuando pase el temblor</p>
+                    </article>
+                </div>
+
+                <p class="barra-info">Última actualización de instrucciones: hoy 10:00 · Frases de máx. 12 palabras</p>
+            </section>
             
             
         </section>
@@ -170,12 +197,126 @@
                     <input type="button" value=" Escuchar">
                     <input type="button" value="Ya vi el aviso">
                 </aside>
+                <section id="avisos-accesibles" class="bloque-wireframe" aria-labelledby="titulo-avisos">
+
+                <div class="avisos-rejilla">
+
+                    <div class="avisos-columna">
+                        <div class="medio-aviso">
+                            <div class="caja-imagen caja-video">Video del aviso en lengua de señas</div>
+                            <p class="subtitulos"><strong>Subtítulos:</strong> «Sismo en Lima Centro. Sal con calma.»
+                            </p>
+                        </div>
+
+                        <div class="comunicar-sin-hablar">
+                            <h3>Comunicarme sin hablar</h3>
+                            <p>Frases listas en pantalla grande para mostrar a quien ayuda</p>
+                            <div class="frases">
+                                <button type="button">Soy sordo/a</button>
+                                <button type="button">Necesito ayuda</button>
+                                <button type="button">Escríbeme aquí</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="avisos-columna">
+                        <fieldset class="preferencias">
+                            <legend>Preferencias</legend>
+                            <label class="interruptor">
+                                <span>Video en lengua de señas</span>
+                                <input type="checkbox" role="switch" checked>
+                                <span class="interruptor-pista" aria-hidden="true"></span>
+                            </label>
+                            <label class="interruptor">
+                                <span>Subtítulos siempre activos</span>
+                                <input type="checkbox" role="switch" checked>
+                                <span class="interruptor-pista" aria-hidden="true"></span>
+                            </label>
+                        </fieldset>
+
+                        <div class="campo">
+                            <label for="pref-idioma">Idioma del aviso</label>
+                            <select id="pref-idioma">
+                                <option selected>Español</option>
+                                <option>Quechua</option>
+                            </select>
+                        </div>
+
+                        <fieldset class="preferencias">
+                            <legend>Voz y velocidad de lectura</legend>
+                            <div class="campo-doble">
+                                <div class="campo">
+                                    <label for="pref-voz">Voz</label>
+                                    <select id="pref-voz">
+                                        <option selected>Femenina</option>
+                                        <option>Masculina</option>
+                                    </select>
+                                </div>
+                                <div class="campo">
+                                    <label for="pref-velocidad">Velocidad</label>
+                                    <select id="pref-velocidad">
+                                        <option>Lenta</option>
+                                        <option selected>Normal</option>
+                                        <option>Rápida</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="acciones">
+                            <button type="button">▶ Escuchar muestra</button>
+                            <button type="button" class="boton-principal">Guardar</button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
 
 
             </div>
         </section>
 
         <section id="simulacro"><!--Simulacro-->
+            <section id="preparate" class="bloque-wireframe" aria-labelledby="titulo-preparate">
+                <h2 id="titulo-preparate">Prepárate: qué hacer en cada emergencia</h2>
+                <p>Ejemplos cortos para recordar antes de que ocurra.</p>
+
+                <div class="selector-emergencia" role="group" aria-label="Tipo de emergencia">
+                    <button type="button" aria-pressed="true">Sismo</button>
+                    <button type="button" aria-pressed="false">Incendio</button>
+                    <button type="button" aria-pressed="false">Inundación</button>
+                </div>
+
+                <div class="tarjetas-pasos">
+                    <article class="tarjeta tarjeta-paso">
+                        <div class="caja-imagen caja-video">Ejemplo en video corto (30 s)</div>
+                        <h3 class="paso-titulo">1. Agáchate</h3>
+                        <p>Baja al piso y protege tu cabeza con los brazos.</p>
+                    </article>
+                    <article class="tarjeta tarjeta-paso">
+                        <div class="caja-imagen caja-video">Ejemplo en video corto (30 s)</div>
+                        <h3 class="paso-titulo">2. Cúbrete</h3>
+                        <p>Métete bajo una mesa firme o junto a una pared interior.</p>
+                    </article>
+                    <article class="tarjeta tarjeta-paso">
+                        <div class="caja-imagen caja-video">Ejemplo en video corto (30 s)</div>
+                        <h3 class="paso-titulo">3. Espera y sal</h3>
+                        <p>Espera a que pare el temblor y sal con calma.</p>
+                    </article>
+                </div>
+
+                <div class="pie-preparate">
+                    <div class="frase-calma">
+                        <h3>Frase de calma</h3>
+                        <p>«Respira. Sabes qué hacer.»</p>
+                    </div>
+                    <div class="acciones">
+                        <a class="boton boton-principal" href="#practicar-simulacro">Practicar simulacro</a>
+                        <a class="boton" href="#mi-perfil">Mi perfil</a>
+                    </div>
+                </div>
+            </section>
+            
             <div class="titulo-simulacro">
                 <h2>ESTO ES UN SIMULACRO - Funciona con tus preferencias</h2>
             </div>

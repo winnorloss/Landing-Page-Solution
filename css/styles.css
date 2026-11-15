@@ -115,6 +115,252 @@ button:focus-visible {
   outline: 3px solid #5E60CE;
   outline-offset: 2px;
 }
+html { scroll-padding-top: 88px; }
+
+.bloque-wireframe,
+.bloque-wireframe *,
+.bloque-wireframe *::before,
+.bloque-wireframe *::after { box-sizing: border-box; }
+
+.bloque-wireframe { margin: 32px 0; }
+.bloque-wireframe h2 { margin: 0 0 8px; }
+
+.selector-emergencia {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+.selector-emergencia button[aria-pressed="true"] {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+
+.tarjetas-pasos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.tarjeta-paso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.tarjeta-paso p,
+.tarjeta-paso h3 { margin: 0; }
+
+.paso-texto { font-size: 1.25rem; font-weight: 700; }
+
+.caja-imagen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.caja-cuadrada { max-width: 200px; aspect-ratio: 1 / 1; }
+.caja-video { aspect-ratio: 16 / 9; }
+
+.barra-info {
+  margin: 24px 0 0;
+  padding: 14px 16px;
+  border: 2px solid #1a1a1a;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.pie-preparate {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.frase-calma {
+  padding: 16px;
+  border: 2px solid #1a1a1a;
+  border-radius: 10px;
+}
+
+.frase-calma h3,
+.frase-calma p { margin: 0; }
+.frase-calma p { margin-top: 4px; }
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  min-height: 44px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+  font-size: 1.125rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton:hover { background: #1a1a1a; color: #fff; }
+
+.boton:focus-visible,
+.bloque-wireframe select:focus-visible {
+  outline: 3px solid #5E60CE;
+  outline-offset: 2px;
+}
+
+.boton-principal { font-weight: 700; border-width: 3px; }
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.pie-preparate .acciones { margin-top: 0; }
+
+.avisos-rejilla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.avisos-columna { display: grid; gap: 24px; }
+
+.medio-aviso {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  border: 2px solid #1a1a1a;
+  border-radius: 10px;
+}
+
+.subtitulos {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.comunicar-sin-hablar h3 { margin: 0 0 8px; }
+.comunicar-sin-hablar p { margin: 0 0 16px; }
+
+.frases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.frases button { padding: 14px 18px; }
+
+.preferencias {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.preferencias legend {
+  padding: 0;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.campo { display: grid; gap: 6px; }
+.campo label { font-weight: 700; }
+
+.campo-doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.bloque-wireframe select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+  font-size: 1.125rem;
+}
+
+.interruptor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.interruptor input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.interruptor-pista {
+  position: relative;
+  flex: none;
+  width: 56px;
+  height: 32px;
+  border: 2px solid #1a1a1a;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.interruptor-pista::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #1a1a1a;
+}
+
+.interruptor input:checked + .interruptor-pista { background: #1a1a1a; }
+
+.interruptor input:checked + .interruptor-pista::after {
+  left: 27px;
+  background: #fff;
+}
+
+.interruptor input:focus-visible + .interruptor-pista {
+  outline: 3px solid #5E60CE;
+  outline-offset: 3px;
+}
+
+/* Celular */
+@media (max-width: 700px) {
+  .tarjetas-pasos,
+  .pie-preparate,
+  .avisos-rejilla { grid-template-columns: 1fr; }
+}
 
 .texto-inicio{
   max-width: 560px;
