@@ -122,6 +122,7 @@
         </section>
 
         <section id="mi-perfil" ><!--Mi perfil-->
+
             <div class="perfil">
                 
                 <div class="perfil-config">
@@ -173,7 +174,7 @@
                             <input type="range" min="16" max="32" value="20" class="slider" id="tamano-letra" aria-label="Tamaño de letra">         
                         </div>
 
-                        <div class="Contenedor de Boton">
+                        <div class="contenedor-boton">
                             <label for="sw-contraste">Contraste alto</label>
                             <input type="checkbox" id="sw-contraste" class="toggle" role="switch">
                         </div>
@@ -183,22 +184,25 @@
                             <input type="button" value="Guardar">
                         </div> 
                     </div>
-                </div>                    
-
+                </div>                   
 
                 <aside id="vista-previa-simulacro" aria-label="Vista previa en vivo de la alerta">
-                    <p>Vista previa en vivo</p>
-                    <h3>ALERTA OFICIAL</h3>
-                    <h2>Sismo</h2>
-                    <p>Gravedad: Alta</p>
-                    <div class="vista-previa-salir">
-                        <h2>SALIR<br>de forma segura</h2>
+                    <h3 id="titulo-vista" class="vista-titulo">Vista previa en vivo</h3>
+                    <div class="telefono">
+                        <p class="alerta-oficial"ALERTA OFICIAL></p>
+                        <div class="datos-alerta">
+                            <h4>SISMO</h4>
+                            <p>Gravedad:ALTA</p>
+                        </div>
+                        <div class="vista-previa-salir"><strong>SALIR</strong><br>de forma segura</div>
+                        <input type="button" value=" Escuchar">
+                        <input type="button" value="Ya vi el aviso">
                     </div>
-                    <input type="button" value=" Escuchar">
-                    <input type="button" value="Ya vi el aviso">
                 </aside>
-                <section id="avisos-accesibles" class="bloque-wireframe" aria-labelledby="titulo-avisos">
 
+            </div>
+            <section id="avisos-accesibles" class="bloque-wireframe" aria-labelledby="titulo-avisos">
+                    <h2 id="titulo-avisos">Avisos accesibles</h2>
                 <div class="avisos-rejilla">
 
                     <div class="avisos-columna">
@@ -239,6 +243,7 @@
                             <select id="pref-idioma">
                                 <option selected>Español</option>
                                 <option>Quechua</option>
+                                <option>Inglés</option>
                             </select>
                         </div>
 
@@ -270,11 +275,11 @@
                     </div>
 
                 </div>
-            </section>
+                </section>
 
-
-            </div>
         </section>
+
+
 
         <section id="simulacro"><!--Simulacro-->
             <section id="preparate" class="bloque-wireframe" aria-labelledby="titulo-preparate">
