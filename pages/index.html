@@ -33,8 +33,8 @@
                 <div class="texto-inicio">
                     <h1>Una alerta de emergencia que sí puedes percibir </h1>
                     <p>Alerta360 te avisa con vibracion, luces, voz y texto facil</p> 
-                    <input type="button" value="Configurar mi perfil">
-                    <input type="button" value="Probar un simulacro">
+                    <a href="#mi-perfil" class="boton">Configurar mi perfil</a>
+                    <a href="#simulacro" class="boton">Probar un simulacro</a>
                 </div> 
 
                 <div class="mapa">
@@ -66,7 +66,7 @@
                     </article>
                 
                     <article class="tarjeta">
-                        <img src="" alt="" width="48" height="48" class="icono=texto-facil">
+                        <img src="" alt="" width="48" height="48" class="icono-texto-facil">
                         <h3>Texto fácil</h3>
                         <p>Frases cortas y pictogramas</p>
                     </article>
@@ -131,8 +131,8 @@
                         </div>
 
                         <div class="contenedor-boton">
-                            <label for="sw-voz">Vibracion</label>
-                            <input type="checkbox" id="sw-vibracion" class="toggle" role="switch">
+                            <label for="sw-voz">Voz</label>
+                            <input type="checkbox" id="sw-voz" class="toggle" role="switch">
                         </div>
                     
                         <div class="contenedor-boton">
@@ -142,14 +142,13 @@
 
 
                         <h3>3. Tamaño de letra y contraste</h3>
-                        <div class="Barra de ajuste">
-                            <input type="range" min="10" max="30" value="16" class="slider" id="myRange">         
+                        <div class="barra-ajuste">
+                            <input type="range" min="16" max="32" value="20" class="slider" id="tamano-letra" aria-label="Tamaño de letra">         
                         </div>
 
                         <div class="Contenedor de Boton">
-                            <p>Contraste alto</p>
-                            <input type="checkbox" id="sw-contraste" class="toggle">
-                            <label for="sw-contraste" class="sw-contraste"></label>
+                            <label for="sw-contraste">Contraste alto</label>
+                            <input type="checkbox" id="sw-contraste" class="toggle" role="switch">
                         </div>
 
                         <div class="botones">
@@ -180,50 +179,75 @@
             <div class="titulo-simulacro">
                 <h2>ESTO ES UN SIMULACRO - Funciona con tus preferencias</h2>
             </div>
+            <div class="simulacro-cuadros">
+                <div class="bloque-indeci">
 
-            <div class="bloque-indeci">
-                <img src="../assets/images/" alt=" " width="100" height="100">
-                <h2>INDECI</h2><p>Hoy</p><h2>SISMO</h2><h3>Gravedad: Alta</h3></p>
-               <div class="sub-bloque-indeci">
-                <h2>SALIR</h2><h3>de forma segura</h3>
-               </div> 
-            </div>
-
-            <div class="pasos-simulacro">
-                <h2>Pasos a seguir</h2>
-                <div class="pictograma">
-                    <img src="../assets/images/" alt=" " width="100 " height="100 ">
+                    <div class="indeci-cabecera">
+                        <img src="../assets/images/" alt=" " width="64" height="64">
+                        <div>
+                            <p><strong>INDECI</strong></p>
+                            <p class="detalle">Hoy 14:32 · Lima Centro</p>
+                        </div>
+                    </div>
+                    <h3>SISMO</h3>
+                    <p><strong>Gravedad:</strong></p>
+                <div class="sub-bloque-indeci">SALIR de forma segura</div>
                 </div>
-                <h2>Sal del edificio por la escalera</h2>
-                <div class="instrucciones">
-                    <p>Respira, vas bien.Un paso a la vez</p>
+
+                <div class="pasos-simulacro" aria-live="polite">
+                    <h3>Paso 1 de 3</h3>
+                    <div class="progreso" role="progressbar" aria-label="Progreso de los pasos"
+                        aria-valuemin="1" aria-valuemax="3" aria-valuenow="1">
+                        <span></span>
+                    </div>
+
+
+                    <div class="paso-contenido">
+                        <div class="pictograma">
+                            <img src="../assets/images/" alt=" " width="100 " height="100 ">
+                        </div>
+                        <div>
+                            <p class="paso-texto"><strong>Sal del edificio por la escalera</strong></p>
+                            <div class="instrucciones">
+                                <p>«Respira, vas bien. Un paso a la vez.»</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="botones-paso">
+                        <input type="button" value="◀ Atrás" id="boton-atras">
+                        <input type="button" value="Siguiente ▶" id="boton-siguiente">
+                    </div>
                 </div>
-                <input type="button" value="Atras">
-                <input type="button" value="Siguiente">
             </div>
 
-            <div class="lista-instrucciones">
-                <h2>Ver todas las instrucciones</h2>
-                <input type="button" value="Abrir lista de instrucciones">
-            </div>
-            
-            <div class="consejo">
-                <h2>Lee a tu ritmo</h2>
-                <p>El paso no desaparece hasta que pulses el boton "siguiente"</p>
+
+            <div class="avisos-simulacro">
+                <div class="lista-instrucciones">
+                    <h2>Ver todas las instrucciones</h2>
+                    <input type="button" value="Abrir lista de instrucciones">
+                </div>
+                
+                <div class="consejo">
+                    <h2>Lee a tu ritmo</h2>
+                    <p>El paso no desaparece hasta que pulses el boton "siguiente"</p>
+                </div>
+
+                <div class="recordatorio">
+                    <h2>Recordatorio</h2>
+                    <p>Si pasas 30seg sin acción, se repite la instrucción</p>
+                </div>
             </div>
 
-            <div class="recordatorio">
-                <h2>Recordatorio</h2>
-                <p>Si pasas 30seg sin acción, se repite la instrucción</p>
-            </div>
 
             <div class="simulacro-resultado">
                 <h2>Resultado del simulacro</h2>
                 <p>Tu desempeño en el simulacro fue...</p>
             </div>
-
-            <input type="button" value="Iniciar simulacro">
-            <input type="button" value="Ajustar preferencias">
+            <div class="botones-simulacro"> 
+                <input type="button" value="Iniciar simulacro">
+                <input type="button" value="Ajustar preferencias">
+            </div>
         </section>
 
         <section id="zonas-seguras"><!--Zonas seguras-->
@@ -337,10 +361,6 @@
             </div>
             
         </section>
-
-
-
-
 
         <section id="familiares"><!--Familiares-->
             <h2>Seguimiento de mis familiares</h2>
