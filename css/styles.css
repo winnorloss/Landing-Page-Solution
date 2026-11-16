@@ -22,6 +22,7 @@
 
 
 /* #region 0 · BASE */
+
 html {
   font-size: var(--tam-letra, 100%);
   scroll-padding-top: 90px;
@@ -764,8 +765,156 @@ button:focus-visible {
 
 
 /* #region 9 · W-04 ZONAS SEGURAS Y RUTAS (pendiente de adaptar al wireframe) */
-/* .ingreso-direccion, .opciones-zonas, .ruta-alternativa,
+
+input[type="text"],
+input[type="tel"],
+input[type="search"],
+textarea {
+  min-height: 44px;
+  padding: 8px 120px;
+  font: inherit;
+  font-size: 1.125rem;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
+}
+.busqueda-distrito{
+  display:flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+}
+.busqueda-distrito input[type=text]{
+  flex:1;
+  min-width: 0;
+}
+
+/*botones de zonas*/
+.opciones-zonas {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.opciones-zonas h2 {
+  margin: 0;
+  text-align: left;
+}
+.opciones-zonas input[type="button"] {
+  width: 750px;             
+  max-width: 100%;          
+  min-height: 48px;
+}
+
+
+
+/*botones de pasos*/
+.opciones-pasos {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.opciones-pasos h2 {
+  margin: 0;
+  text-align: left;
+}
+.opciones-pasos input[type="button"] {
+  width: 750px;             
+  max-width: 100%;          
+  min-height: 48px;
+}
+
+
+
+
+.descripcion-mapa-texto{
+  border: 1px solid #000;
+  border-radius: 8px;
+  padding: 14px;
+  min-height: 90px;
+  margin-top: 10px;
+}
+.confirmacion-llegada{
+  margin: 0;
+  padding: 15px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background: #e0e0e0;
+  text-align: center;
+  font-weight: 700;
+  margin-top:10px
+}
+
+
+
+
+
+
+.acciones-ruta{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: stretch;
+  margin-top: 10px;  
+}
+.acciones-ruta input[type="button"] {
+  width: 100%;                     
+  min-height: 48px;
+  margin: 0;                        
+}
+
+
+.division{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:30px;
+  align-items:start;
+}
+
+.ruta-alternativa{
+  border: 1px solid #000;    
+  border-radius: 8px;         
+  padding: 12px 16px;         
+  background: #fff;
+}
+.ruta-alternativa{
+ padding: 5px 200px;         
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;         
+  min-height: 120px;           
+}
+.referencias{
+  border: 1px solid #000;    
+  border-radius: 8px;         
+  padding: 12px 16px;         
+  background: #fff;
+  margin-top: 10px;
+}
+.referencias{
+ padding: 5px 200px;         
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;         
+  min-height: 120px;           
+}
+/* .ingreso-direccion,
+
+
+
+
+
+
+.opciones-zonas, .ruta-alternativa,
    .referencias, .descripcion-mapa-texto, .confirmacion-llegada */
+
+
+
+
 /* #endregion */
 
 
@@ -779,7 +928,7 @@ button:focus-visible {
 
 /* Lista (columna izquierda) */
 .lista-contactos {
-  border: 2px solid #1a1a1a;
+  border: 1px solid #1a1a1a;
   border-radius: 10px;
 }
 
@@ -789,25 +938,24 @@ button:focus-visible {
   align-items: center;
   gap: 12px;
   padding: 14px 16px;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid #000000;
 }
 
 .fila p { margin: 0; }
-.fila:last-child { border-bottom: none; }
+.fila:last-child { border-bottom:1px solid #000; }
 .lista-contactos .encabezado { font-weight: 700; }
 
 .insignia {
   display: inline-block;
   padding: 4px 16px;
-  border: 2px solid #1a1a1a;
-  border-radius: 999px;
+  border: 2px solid #000000;
+  border-radius: 8px;
 }
-
 .lista-contactos .accion {
   justify-self: start;
   min-height: 44px;
   padding: 8px 16px;
-  border: 1px solid #1a1a1a;
+  border: 1px solid #000000;
   border-radius: 8px;
   background: #fff;
   color: #1a1a1a;
@@ -816,10 +964,16 @@ button:focus-visible {
 
 .lista-contactos .accion:hover { background: #1a1a1a; color: #fff; }
 
+.contactos-cuadro{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: stretch;    
+}
 /* Formulario Agregar contacto (columna derecha) */
 .agregar-contacto {
   padding: 20px;
-  border: 2px solid #1a1a1a;
+  border: 1px solid #1a1a1a;
   border-radius: 10px;
   background: #f5f5f5;
 }
@@ -848,7 +1002,7 @@ button:focus-visible {
 .privacidad {
   margin: 24px 0;
   padding: 20px;
-  border: 2px solid #1a1a1a;
+  border: 1px solid #1a1a1a;
   border-radius: 10px;
   background: #f5f5f5;
 }
@@ -876,6 +1030,91 @@ button:focus-visible {
 /* .alerta, .Cronologia, .estado-familiar, .persona-uno/dos/tres,
    .enviar-frase, .indicaciones */
 /* #endregion */
+.alerta{
+  border: 1px solid #000;     
+  border-radius: 8px;         
+  padding: 12px 16px;         
+  background: #fff; 
+}
+.columnas{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.cronologia{
+  border: 1px solid #000;     
+  border-radius: 8px;         
+  padding: 12px 16px;         
+  background: #fff;  
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width:410px ;
+  min-height: 500px;
+}
+.estado-familiar {
+  border: 2px solid #1a1a1a;
+  border-radius: 10px;
+}
+
+.columna-izquierda{
+  border: 1px solid #000;     
+  border-radius: 8px;         
+  padding: 12px 16px;         
+  background: #fff;  
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width:1000px ;
+  min-height: 500px;
+}
+
+.fila-estado {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);   
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #1a1a1a;
+}
+.fila-estado:last-child { border-bottom: none; }
+
+.fila-estado h3,
+.fila-estado p { margin: 0; font-size: 1rem; }
+.encabezado-estado { font-weight: 700; background: #ffffff; }
+
+.estado,
+.zona-afectada {
+  border: 2px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .fila-estado { grid-template-columns: 1fr 1fr; }  
+}
+
+.indicaciones{
+  border: 2px solid #1a1a1a;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+.indicaciones p,h2{
+  font-size: 1.25rem; 
+  font-weight: 400; 
+  font-family: Arial, sans-serif;
+  color: #000
+}
+.cuadro {
+  text-align: right;        
+  display: flex;
+  align-items: center;       
+  justify-content: center;   
+  padding: 15px 20px;        
+  min-height: 80px;         
+}
 
 
 /* #region 12 · PIE DE PÁGINA */

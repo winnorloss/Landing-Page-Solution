@@ -22,6 +22,7 @@
             <a href="#zonas-seguras">Zonas seguras</a>
             <a href="#contactos">Contactos</a>
             <a href="#familiares">Familiares</a>
+            <a href="comenzar">Comenzar</a>
         </nav>
     </header>
 
@@ -397,45 +398,60 @@
         </section>
 
         <section id="zonas-seguras"><!--Zonas seguras-->
-            <h2>Zonas seguras y rutas </h2>
-            <div class="ingreso-direccion">
-                <input type="text" placeholder="Ingresa tu dirección">
-                <input type="button" value="Buscar">
-            </div>
             
-            <div class="opciones-zonas">
-                <h2>Zona mas cercana</h2>
-                <input type="button" value="Zona segura 1">
-                <input type="button" value="Zona segura 2">
-                <input type="button" value="Zona segura 3">
-            </div>
-            <div class="mapa">
-                <p>Mapa</p>
-            </div>
-            
-            <div class="opciones-zonas">
-                <h2>Ruta en texto(paso a paso)</h2>
-                <input type="button" value="Paso 1">
-                <input type="button" value="Paso 2">
-                <input type="button" value="Paso 3">
-            </div>
-            <div class="ruta-alternativa">
-                <p>Ruta alternativa</p>
-            </div>
-            <div class="referencias">
-                <p>Referencias cercanas:</p>
-            </div>
-            <div class="descripcion-mapa-texto">
-                <p>...</p>
-            </div>
-            <div class="confirmacion-llegada">
-                <p>Llegaste a tu destino</p>
-            </div>
-            <div class="escuchar-ruta">
-                <input type="button" value="Escuchar ruta">
-            </div>
-            <div class="opciones-zonas">
-                <input type="button" value="Ruta alternativa">
+            <div class="division">
+                <div class="lado-izquierdo-zonas">
+
+                    
+                    <div class="busqueda-distrito">
+                        
+                        <input type="text" class="barra-direccion" placeholder="Ingresa tu direccion o distrito">
+                        <div class="boton-busqueda">
+                            <input type="button" class="busqueda" value="Buscar">
+                        </div>
+                    </div>
+                    
+                    <h2 class="zonas-titulo">Zona mas cercana</h2>
+                    <div class="opciones-zonas">
+                        
+                        <input type="button" value="Zona segura 1">
+                        <input type="button" value="Zona segura 2">
+                        <input type="button" value="Zona segura 3">
+                    </div>
+                    
+                    <h2 class="opciones-pasos">Ruta en texto(paso a paso)</h2>
+                    <div class="opciones-pasos">
+                        
+                        <input type="button" value="Paso 1">
+                        <input type="button" value="Paso 2">
+                        <input type="button" value="Paso 3">
+                    </div>
+
+                    <div class="ruta-alternativa">
+                        <p>Ruta alternativa</p>
+                    </div>
+                    <div class="referencias">
+                        <p>Referencias cercanas</p>
+                    </div>
+                </div>
+                
+                <div class="lado-derecho-zonas">
+                    <div class="descripcion-mapa-texto">
+                        <p>...</p>
+                    </div>
+                    <div class="confirmacion-llegada">
+                        <p>Llegaste a tu destino</p>
+                    </div>
+                    <div class="acciones-ruta">
+                        <div class="escuchar-ruta">
+                            <input type="button" value="Escuchar ruta">
+                        </div>
+                        <div class="opciones-zonas">
+                            <input type="button" value="Ruta alternativa">
+                        </div> 
+                    </div>
+                    
+                </div>
             </div>
         </section>
 
@@ -513,61 +529,67 @@
             <div class="alerta">
                 <h3>Alerta activa: SIMSMO - Lima Centro - 14:32</h3>
             </div>
+            <div class="columnas">
 
-            <div class="Cronologia">
-                <ul>
-                    <li>14:32 - Alerta recibida</li>
-                    <li>14:33 - Ubicación actualizada</li>
-                    <li>14:34 - Ubicación actualizada</li>
-                    <li>14:35 - Ubicación actualizada</li>
-                </ul>
+
+                <div class="columna-izquierda">
+
+                    <div class="fila-estado encabezado-estado">
+                        <h3>Estado de mi familiar</h3>
+                        <h3>Alerta recibida</h3>
+                        <h3>Estado</h3>
+                        <h3>¿En zona afectada?</h3>
+                    </div>
+
+                    <div class="fila-estado persona-uno">
+                        <p>Persona 1</p>
+                        <p>Hora 1</p>
+                        <div class="estado"><p>En zona segura</p></div>
+                        <div class="zona-afectada"><p>No</p></div>
+                    </div>
+
+                    <div class="fila-estado persona-dos">
+                        <p>Persona 2</p>
+                        <p>Hora 2</p>
+                        <div class="estado"><p>En zona segura</p></div>
+                        <div class="zona-afectada"><p>No</p></div>
+                    </div>
+
+                    <div class="fila-estado persona-tres">
+                        <p>Persona 3</p>
+                        <p>Hora 3</p>
+                        <div class="estado"><p>En zona segura</p></div>
+                        <div class="zona-afectada"><p>No</p></div>
+                    </div>
+
+                    
+                </div>
+                
+
+                <div class="columna-derecha">
+                    
+                    <div class="cronologia">
+                        <h3 class="titulo-cronologia">Cronologia</h3>
+                        <ul>
+                            <li>14:32 - Alerta recibida</li>
+                            <li>14:33 - Ubicación actualizada</li>
+                            <li>14:34 - Ubicación actualizada</li>
+                            <li>14:35 - Ubicación actualizada</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="enviar-frase">
+                    <input type="button" value="Voy por ti">
+                    <input type="button" value="Quedate donde estas">
+                    <input type="button" value="Estoy llegando">
+                    <input type="button" value="Llama si puedes">
+                </div>
+
             </div>
 
-            <div class="estado-familiar">
-                <h3>Estado de mi familiar</h3>
-                <h3>Alerta recibida</h3>
-                <h3>Estado</h3>
-                <h3>En zona afectada?</h3>
-                <div class="persona-uno">
-                    <h2>Persona 1</h2>
-                    <h2 >Hora 1</h2>
-                    <div class="estado">
-                        <p>En zona segura</p>
-                    </div>
-                    <div class="zona-afectada">
-                        <p>No</p>
-                    </div>
-                </div>
 
-                <div class="persona-dos">
-                    <h2>Persona 2</h2>
-                    <h2 >Hora 2</h2>
-                    <div class="estado">
-                        <p>En zona segura</p>
-                    </div>
-                    <div class="zona-afectada">
-                        <p>No</p>
-                    </div>
-                </div>
-
-                <div class="persona-tres">
-                    <h2>Persona 3</h2>
-                    <h2 >Hora 3</h2>
-                    <div class="estado">
-                        <p>En zona segura</p>
-                    </div>
-                    <div class="zona-afectada">
-                        <p>No</p>
-                    </div>
-                </div>
-            </div>
             
-            <div class="enviar-frase">
-                <input type="button" value="Voy por ti">
-                <input type="button" value="Quedate donde estas">
-                <input type="button" value="Estoy llegando">
-                <input type="button" value="Llama si puedes">
-            </div>
 
             <div class="indicaciones">
                 <h2>Como acomapañar...</h2>
