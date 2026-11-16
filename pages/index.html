@@ -127,8 +127,8 @@
             <div class="perfil">
                 
                 <div class="perfil-config">
-                    <h2>Mi perfil de avisos</h2>
-                    <p>Elige como quieres recibir una alerta y prueba antes de guardar</p>
+                    <h1 class="titulo-miperfil">Mi perfil de avisos</h1>
+                    <p class="descripcion-titulo-miperfil">Elige como quieres recibir una alerta y prueba antes de guardar</p>
                     
                     <h3>1. Perfil rapido</h3>
                     <div class="tarjetas cuatro">
@@ -142,7 +142,7 @@
                             <h3>Cognitivo</h3>
                         </article>
                         <article class="tarjeta">
-                            <h3>Auditivo y Visual</h3>
+                            <h3>Combinado</h3>
                         </article>
                     </div>
 
@@ -280,8 +280,6 @@
 
         </section>
 
-
-
         <section id="simulacro"><!--Simulacro-->
             <section id="preparate" class="bloque-wireframe" aria-labelledby="titulo-preparate">
                 <h2 id="titulo-preparate">Prepárate: qué hacer en cada emergencia</h2>
@@ -324,7 +322,6 @@
             </section>
             
             <div class="titulo-simulacro">
-                <h2>ESTO ES UN SIMULACRO - Funciona con tus preferencias</h2>
             </div>
             <div class="simulacro-cuadros">
                 <div class="bloque-indeci">
@@ -398,11 +395,13 @@
         </section>
 
         <section id="zonas-seguras"><!--Zonas seguras-->
-            
+            <h2 class="zonas-titulo">Zonas seguras y rutas</h2>
             <div class="division">
+                
                 <div class="lado-izquierdo-zonas">
 
                     
+
                     <div class="busqueda-distrito">
                         
                         <input type="text" class="barra-direccion" placeholder="Ingresa tu direccion o distrito">
@@ -411,9 +410,8 @@
                         </div>
                     </div>
                     
-                    <h2 class="zonas-titulo">Zona mas cercana</h2>
                     <div class="opciones-zonas">
-                        
+                        <h2>Zona mas cercana</h2>
                         <input type="button" value="Zona segura 1">
                         <input type="button" value="Zona segura 2">
                         <input type="button" value="Zona segura 3">
@@ -436,9 +434,16 @@
                 </div>
                 
                 <div class="lado-derecho-zonas">
+                    <div class="descripcion-mapa-texto-img">
+                        <img src="../assets/images/">
+
+                    </div>
                     <div class="descripcion-mapa-texto">
                         <p>...</p>
+
                     </div>
+
+                    
                     <div class="confirmacion-llegada">
                         <p>Llegaste a tu destino</p>
                     </div>
@@ -580,6 +585,7 @@
 
                 </div>
                 <div class="enviar-frase">
+                    <h2>Enviar frase lista</h2>
                     <input type="button" value="Voy por ti">
                     <input type="button" value="Quedate donde estas">
                     <input type="button" value="Estoy llegando">
@@ -597,6 +603,128 @@
             </div>
                 
         </section>
+
+
+
+
+        <div class="pedir-ayuda"><!--Pedir ayuda sin hablar/wireframe -->
+            <div class="titulo-ayuda">
+                <h1 class="titulo-ayuda"> Pedir ayuda sin hablar</h1>
+                <p class="introduccion-ayuda">Con un toque se envia tu ubicacion y tipo de ayuda por texto</p>
+            </div>
+            <div class="tipo-ayuda">
+                <div class="cuadro1">
+                    <h2 class="titulo1">BOMBEROS</h2>
+                </div>
+
+                <div class="cuadro2">
+                    <h2 class="titulo2">AMBULANCIA</h2>
+                </div>
+
+                <div class="cuadro1">
+                    <h2 class="titulo1">POLICIA</h2>
+                </div>
+
+            </div>
+            <div class="confirmacion-ayuda">
+
+                <div class="envio-solicitud">
+                    <h1 class="1era-linea-solicitud">Se enviara</h1>
+
+                    <div class="ubicacion-tipoayuda-ficha">
+                        <p class="ubicacion">Ubicacion aproximada</p>
+                        <p class="tipoayuda">Tipo de ayuda</p>
+                        <p class="ficha">Mi ficha de apoyo</p>
+                    </div>
+
+                    <p class="conexion">Sin conexion: se guarda y reintenta</p>
+
+                </div>
+
+                <div class="estado-solicitud">
+                    <h1 class="estado-mensaje">Estado:Solicitud enviada<br>Ayuda en camino</h1>
+                </div>
+            </div>
+            <div class="cancelar">
+                <input type="button" value="Cancelar" class="cancelar-boton">
+            </div>
+        </div>
+
+        <div class="lugares"><!--Mis lugares/wireframe-->
+            
+            <div class="encabezado-lugares">
+                <h1 class="titulo-lugares">Mis lugares</h1>
+                <p class="introduccion-lugares">Recibe avisos y rutas pensadas para cada lugar donde estes</p>
+            </div>
+            <div class="izquierda-lugares">
+                <div class="opciones-lugares">
+                    <div class="ubicacion1">
+                            <div class="icono">
+                                <img src="../assets/icons/">
+                            </div>
+                            <div class="lugar-ubicacion1">
+                                <h1 class="nombre-ubicacion1 ">Casa</h1>
+                                <p class="descripcion-ubicacion1">Av.Peru 123 - Zona:Lima Centro</p>
+                            </div>
+                            <div class="editar-ubicacion1">
+                                <input type="button" class="editar" value="editar">
+                            </div>
+                    </div>
+
+                    <div class="ubicacion2">
+                            <div class="icono">
+                                <img src="../assets/icons/">
+                            </div>
+                            <div class="lugar-ubicacion2">
+                                <h1 class="nombre-ubicacion2 ">Trabajo</h1>
+                                <p class="descripcion-ubicacion2">Jr. Lima 456 - Zona:Cercado</p>
+                            </div>
+                            <div class="editar-ubicacion2">
+                                <input type="button" class="editar" value="editar">
+                            </div>
+                    </div>
+
+                    <div class="ubicacion3">
+                            <div class="icono">
+                                <img src="../assets/icons/">
+                            </div>
+                            <div class="lugar-ubicacion3">
+                                <h1 class="nombre-ubicacion3 ">Casa</h1>
+                                <p class="descripcion-ubicacion3">Av. Universitaria - Zona:San miguel</p>
+                            </div>
+                            <div class="editar-ubicacion3">
+                                <input type="button" class="editar" value="editar">
+                            </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="derecha">
+
+                <div class="opciones-avisos">
+                    <h1 class="opcines-titulo">Qué avisos recibo</h1>
+                </div>
+                <div class="linea-zona-actual">
+                    <p class="zona-actual">Solo los de mi zona actual</p>
+                    <input type="checkbox">
+                </div>
+                <div class="linea-lugares-guardados">
+                    <p class="zona-actual">Los de mis lugares guardados</p>
+                    <input type="checkbox">
+                </div>
+                <div class="comunicado">
+                    <p class="comunicado">No recibiras avisos de otras zonas<br>para evitar confusion</p>
+                </div>
+
+            </div>
+
+            <div class="boton-agregar-lugares">
+                <input type="button" class="agregar-lugares" value="Guardar">
+            </div>
+        </div>
+
 
     </main>
     
