@@ -14,10 +14,12 @@
    6  W-08 Avisos accesibles
    7  W-03 Simulacro y vista previa
    8  W-09 Ejemplos cortos (Prepárate)
-   9  W-04 Zonas seguras y rutas   (pendiente)
+   9  W-04 Zonas seguras y rutas
    10 W-05 Contactos de confianza
-   11 W-06 Seguimiento de familiares   (pendiente)
+   11 W-06 Seguimiento de familiares
    12 Pie de página
+   W-10 Ficha de apoyo · W-11 Pedir ayuda sin hablar · W-12 Mis lugares
+   W-13 Fin de la emergencia
    ========================================================== */
 
 
@@ -72,13 +74,14 @@ select:focus-visible {
 /* Botones (input y button) */
 input[type="button"],
 button {
-  padding: 14px 28px;
+  padding: 12px 24px;
   min-height: 44px;
-  border: 1px solid #000;
+  border: 1px solid #1a1a1a;
   border-radius: 8px;
-  background: #fff;
-  color: #000;
+  background: #ececec;
+  color: #1a1a1a;
   font-size: 1.125rem;
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -102,14 +105,14 @@ button:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  padding: 14px 28px;
+  padding: 12px 24px;
   min-height: 44px;
-  border: 2px solid #000;
+  border: 1px solid #1a1a1a;
   border-radius: 8px;
-  background: #fff;
-  color: #000;
+  background: #ececec;
+  color: #1a1a1a;
   font-size: 1.125rem;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
 }
@@ -121,12 +124,9 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-.boton-principal { 
-  font-weight: 700; 
-  border-width:none;
-  font-size: 1.25rem;
-  
-}
+/* Botón principal: gris más oscuro, como en los wireframes */
+.boton-principal,
+input[type="button"].boton-principal { background: #cfcfcf; }
 
 .acciones {
   display: flex;
@@ -146,7 +146,7 @@ button:focus-visible {
 .tarjeta {
   border: 1px solid #1a1a1a;
   border-radius: 10px;
-  padding: 20px;
+  padding: 16px 18px;
   background: #fff;
 }
 
@@ -155,7 +155,13 @@ button:focus-visible {
   width: 48px;
   height: 48px;
   margin-bottom: 12px;
+  border: 2px solid #1a1a1a;
+  border-radius: 50%;
+  background: #d9d9d9;
 }
+
+.tarjeta h3 { margin: 0 0 4px; font-size: 1.125rem; }
+.tarjeta p { margin: 0; font-size: 0.95rem; color: #595959; }
 
 @media (max-width: 800px) {
   .tarjetas.tres,
@@ -167,13 +173,9 @@ button:focus-visible {
 }
 
 /* Bloques de wireframe (Instrucciones, Avisos, Prepárate) */
-.bloque-wireframe,
-.bloque-wireframe *,
-.bloque-wireframe *::before,
-.bloque-wireframe *::after { box-sizing: border-box; }
-
 .bloque-wireframe { margin: 32px 0; }
 .bloque-wireframe h2 { margin: 0 0 8px; }
+.bloque-wireframe h2 + p { margin: 0; color: #595959; }
 
 .selector-emergencia {
   display: flex;
@@ -182,9 +184,11 @@ button:focus-visible {
   margin: 16px 0 24px;
 }
 
+.selector-emergencia button { background: #fff; }
+
 .selector-emergencia button[aria-pressed="true"] {
-  background: #1a1a1a;
-  color: #fff;
+  background: #cfcfcf;
+  color: #1a1a1a;
 }
 
 .tarjetas-pasos {
@@ -210,13 +214,27 @@ button:focus-visible {
   justify-content: center;
   width: 100%;
   padding: 8px;
-  border: 1px solid #1a1a1a;
-  border-radius: 8px;
+  border: 1px solid #9e9e9e;
+  border-radius: 4px;
+  color: #595959;
+  font-size: 0.9rem;
   text-align: center;
 }
 
-.caja-cuadrada { max-width: 200px; aspect-ratio: 1 / 1; }
+.caja-cuadrada { max-width: 140px; aspect-ratio: 1 / 1; }
 .caja-video { aspect-ratio: 16 / 9; }
+
+/* Marcador de imagen del wireframe: caja con una X */
+.mapa img,
+.pictograma,
+.indeci-cabecera img,
+.descripcion-mapa-texto-img,
+.caja-imagen {
+  background:
+    linear-gradient(to top right, transparent calc(50% - 1px), #c4c4c4 50%, transparent calc(50% + 1px)),
+    linear-gradient(to bottom right, transparent calc(50% - 1px), #c4c4c4 50%, transparent calc(50% + 1px)),
+    #fafafa;
+}
 
 @media (max-width: 700px) {
   .tarjetas-pasos { grid-template-columns: 1fr; }
@@ -253,6 +271,8 @@ button:focus-visible {
   display: block;
   width: 40px;
   height: 40px;
+  border: 1px solid #9e9e9e;
+  border-radius: 4px;
 }
 
 .cabecera nav {
@@ -269,6 +289,10 @@ button:focus-visible {
 
 .cabecera nav a:hover { text-decoration: underline; }
 
+/* Comenzar: botón dentro del menú */
+.cabecera nav .boton { padding: 8px 24px; }
+.cabecera nav .boton:hover { text-decoration: none; }
+
 @media (max-width: 800px) {
   .cabecera { flex-wrap: wrap; }
   .cabecera nav { flex-wrap: wrap; gap: 12px 16px; }
@@ -279,43 +303,45 @@ button:focus-visible {
 /* #region 3 · W-01 INICIO */
 .mapa-inicio {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 24px;
   align-items: center;
 }
 
 .texto-inicio {
   max-width: 560px;
-  margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
-.texto-inicio h1 { font-size: clamp(1.75rem, 5vw, 3rem); }
-.texto-inicio p  { font-size: clamp(1.125rem, 3.5vw, 2rem); }
+.texto-inicio h1 { margin: 0 0 12px; font-size: clamp(1.75rem, 4vw, 2.75rem); line-height: 1.15; }
+.texto-inicio p  { margin: 0 0 24px; font-size: 1.125rem; color: #595959; }
+.texto-inicio .boton { margin: 0 12px 12px 0; }
 
 /* Ojo: la clase .mapa también la usa Zonas seguras */
 .mapa img {
   display: block;
   max-width: 100%;
   height: auto;
-  border: 1px solid #000;
-  border-radius: 10px;
+  border: 1px solid #9e9e9e;
+  border-radius: 4px;
 }
 
 @media (max-width: 700px) {
-  .mapa-inicio { grid-template-columns: 1fr; }
+  .mapa-inicio { grid-template-columns: minmax(0, 1fr); }
 }
 /* #endregion */
 
 
 /* #region 4 · W-07 INSTRUCCIONES ESENCIALES (sin conexión) */
-.tarjeta-paso .paso-texto { font-size: 1.25rem; font-weight: 700; }
+.tarjeta-paso .paso-texto { font-size: 1.25rem; font-weight: 700; color: #1a1a1a; }
 
 .barra-info {
   margin: 24px 0 0;
   padding: 14px 16px;
-  border: 2px solid #000000;
+  border: 1px solid #1a1a1a;
   border-radius: 10px;
+  color: #595959;
+  font-size: 0.95rem;
   text-align: center;
 }
 /* #endregion */
@@ -323,17 +349,13 @@ button:focus-visible {
 
 /* #region 5 · W-02 MI PERFIL DE AVISOS */
 .titulo-miperfil{
+  font-size: 2rem;
   margin-top: 0;
   margin-bottom: 10px;
 }
 .descripcion-titulo-miperfil{
-  margin-top: 10px;
-}
-.perfil {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: start;
+  margin: 0 0 16px;
+  color: #595959;
 }
 .perfil{
   display: grid;
@@ -343,6 +365,8 @@ button:focus-visible {
 }
 /* 1. Perfil rápido */
 .perfil-config .tarjetas { gap: 10px; }
+.perfil-config .tarjeta { padding: 16px 8px; }
+.perfil-config .tarjeta.seleccionada { background: #cfcfcf; }
 
 .perfil-config .tarjeta h3 {
   margin: 0;
@@ -355,6 +379,7 @@ button:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 420px;
   padding: 10px 0;
 }
 
@@ -363,9 +388,9 @@ button:focus-visible {
   position: relative;
   width: 56px;
   height: 32px;
-  border: 2px solid #000000;
+  border: 2px solid #1a1a1a;
   border-radius: 999px;
-  background: #fff;
+  background: #ececec;
   cursor: pointer;
 }
 
@@ -376,19 +401,20 @@ button:focus-visible {
   left: 3px;
   width: 22px;
   height: 22px;
+  border: 2px solid #1a1a1a;
   border-radius: 50%;
-  background: #000000;
+  background: #fff;
   transition: transform 0.2s;
-  
 }
 
 .toggle:checked { background: #1a1a1a; }
-.toggle:checked::before { background: #fff; transform: translateX(24px); }
+.toggle:checked::before { border-color: #fff; transform: translateX(24px); }
 .toggle:focus-visible { outline: 3px solid #5E60CE; outline-offset: 2px; }
 
 /* 3. Tamaño de letra y contraste */
 .barra-ajuste input,
 .slider { width: 100%; accent-color: #1a1a1a; }
+.barra-ajuste { max-width: 520px; }
 
 /* Probar configuración / Guardar */
 .botones {
@@ -396,17 +422,19 @@ button:focus-visible {
   justify-content: flex-start;
   gap: 15px;
   flex-wrap: wrap;
-  
+  margin-top: 24px;
 }
+.botones input { min-width: 170px; }
 
 /* Vista previa en vivo (columna derecha) */
 #vista-previa-simulacro {
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   min-height: 500px;
   margin: 0;
   padding: 20px;
-  border: 1px solid #1a1a1a;
+  border: 1px solid #9e9e9e;
   border-radius: 10px;
   background: #f5f5f5;
 }
@@ -419,10 +447,6 @@ button:focus-visible {
 
 .vista-titulo { margin: 0 0 16px; font-size: 1rem; }
 
-#vista-previa-simulacro {
-  display: flex;
-  flex-direction: column;
-}
 .telefono {
   flex: 1;            
   width: 100%;
@@ -450,6 +474,7 @@ button:focus-visible {
   background: #d9d9d9;
   text-align: center;
   font-size: 1.25rem;
+  font-weight: 700;
 }
 
 @media (max-width: 800px) {
@@ -486,7 +511,7 @@ button:focus-visible {
 }
 
 .comunicar-sin-hablar h3 { margin: 0 0 8px; }
-.comunicar-sin-hablar p  { margin: 0 0 16px; }
+.comunicar-sin-hablar p  { margin: 0 0 16px; color: #595959; }
 
 .frases {
   display: grid;
@@ -510,23 +535,32 @@ button:focus-visible {
 }
 
 .campo { display: grid; gap: 6px; }
-.campo label { font-weight: 700; }
+.campo label { font-weight: 400; }
 
 .campo-doble {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 12px;
 }
+.campo-doble label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
 
 .bloque-wireframe select {
   width: 100%;
   min-height: 44px;
   padding: 10px 12px;
-  border: 2px solid #000;
+  border: 1px solid #1a1a1a;
   border-radius: 8px;
-  background: #fff;
-  color: #000;
+  background: #ececec;
+  color: #1a1a1a;
   font-size: 1.125rem;
+  text-align: center;
 }
 
 /* Escuchar muestra / Guardar: del mismo ancho, ocupando la fila */
@@ -565,7 +599,7 @@ button:focus-visible {
   height: 32px;
   border: 2px solid #1a1a1a;
   border-radius: 16px;
-  background: #fff;
+  background: #ececec;
 }
 
 .interruptor-pista::after {
@@ -575,15 +609,16 @@ button:focus-visible {
   left: 3px;
   width: 22px;
   height: 22px;
+  border: 2px solid #1a1a1a;
   border-radius: 50%;
-  background: #1a1a1a;
+  background: #fff;
 }
 
 .interruptor input:checked + .interruptor-pista { background: #1a1a1a; }
 
 .interruptor input:checked + .interruptor-pista::after {
   left: 27px;
-  background: #fff;
+  border-color: #fff;
 }
 
 .interruptor input:focus-visible + .interruptor-pista {
@@ -602,21 +637,18 @@ button:focus-visible {
 
 /* Título superior (queda fuera de la cuadrícula) */
 .titulo-simulacro {
-  border: 1px solid #000000;
-  border-radius: 10px;
-  padding: 20px;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: #ececec;
   text-align: center;
-  max-width: none;
-  margin: 0 auto 24px;
+  margin: 0 0 24px;
 }
 
 .titulo-simulacro h2 {
   margin: 0;
-  font-family: "Atkinson Hyperlegible", Arial, sans-serif;
   font-size: 1rem;
-  font-weight: 300;
-  line-height: 2.5;
-  letter-spacing: 0.02em;
+  font-weight: 700;
 }
 
 /* Fila de dos cuadros: INDECI + Pasos */
@@ -640,11 +672,12 @@ button:focus-visible {
   gap: 16px;
 }
 
-.indeci-cabecera img { display: block; width: 64px; height: 64px; }
+.indeci-cabecera img { display: block; width: 64px; height: 64px; border: 1px solid #9e9e9e; border-radius: 4px; }
 .indeci-cabecera p { margin: 0; }
-.detalle { font-size: 1rem; }
+.detalle { font-size: 0.9rem; color: #595959; }
 
 .bloque-indeci h3 { margin: 20px 0 4px; font-size: 2rem; }
+.bloque-indeci > p { margin: 0; font-size: 1.25rem; font-weight: 700; }
 
 .sub-bloque-indeci {
   margin-top: 16px;
@@ -664,11 +697,14 @@ button:focus-visible {
   padding: 20px;
 }
 
+.pasos-simulacro h3 { margin: 0; font-size: 1.25rem; }
+
 .progreso {
   height: 12px;
   margin: 12px 0 20px;
-  border: 2px solid #1a1a1a;
+  border: 1px solid #1a1a1a;
   border-radius: 999px;
+  background: #ececec;
   overflow: hidden;
 }
 
@@ -689,8 +725,8 @@ button:focus-visible {
 .pictograma {
   width: 120px;
   padding: 8px;
-  border: 2px solid #1a1a1a;
-  border-radius: 10px;
+  border: 1px solid #9e9e9e;
+  border-radius: 4px;
 }
 
 .pictograma img { display: block; width: 100%; height: auto; }
@@ -698,10 +734,12 @@ button:focus-visible {
 .pasos-simulacro .paso-texto { margin: 0 0 12px; font-size: 1.5rem; }
 
 .instrucciones {
-  padding: 12px 16px;
-  border: 2px solid #1a1a1a;
-  border-radius: 10px;
-  background: #f5f5f5;
+  padding: 8px 12px;
+  border: 1px solid #9e9e9e;
+  border-radius: 8px;
+  color: #595959;
+  font-size: 0.95rem;
+  text-align: center;
 }
 
 .instrucciones p { margin: 0; }
@@ -727,24 +765,27 @@ button:focus-visible {
 .lista-instrucciones,
 .consejo,
 .recordatorio {
-  border: 1px solid #000;
+  border: 1px solid #1a1a1a;
   border-radius: 10px;
-  padding: 20px;
+  padding: 16px;
 }
 
 .avisos-simulacro h2,
-.avisos-simulacro h3 { margin-top: 0; }
+.avisos-simulacro h3 { margin: 0 0 12px; font-size: 1.125rem; }
+.avisos-simulacro p { margin: 0; font-size: 0.95rem; color: #595959; }
+.lista-instrucciones input { width: 100%; }
 
 /* Resultado y botones finales */
 .simulacro-resultado {
-  border: 1px solid #000;
+  border: 1px solid #1a1a1a;
   border-radius: 10px;
-  padding: 20px;
+  padding: 16px;
   margin-top: 24px;
 }
 
 .simulacro-resultado h2,
-.simulacro-resultado h3 { margin-top: 0; }
+.simulacro-resultado h3 { margin: 0 0 8px; font-size: 1.125rem; }
+.simulacro-resultado p { margin: 0; }
 
 .botones-simulacro {
   display: flex;
@@ -767,23 +808,15 @@ button:focus-visible {
 
 
 /* #region 8 · W-09 EJEMPLOS CORTOS (Prepárate) */
-#preparate h2{
-  font-size: 2rem;                
-  font-weight: 700;                
-  font-family: "Atkinson Hyperlegible", Arial, sans-serif;
-  color: #1a1a1a;                  
-  text-align: left;                
-  margin: 0 0 16px;                
+#preparate h2,
+#titulo-avisos,
+#titulo-ficha {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: left;
+  margin: 0 0 8px;
 }
 
-#titulo-avisos{
-  font-size: 2rem;                
-  font-weight: 700;                
-  font-family: "Atkinson Hyperlegible", Arial, sans-serif;
-  color: #1a1a1a;                  
-  text-align: left;                
-  margin: 0 0 16px;     
-}
 .pie-preparate {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -793,16 +826,21 @@ button:focus-visible {
 }
 
 .pie-preparate .acciones { margin-top: 0; }
+.pie-preparate .acciones .boton { flex: 1; }
+
+/* Tarjetas de Prepárate: título y descripción alineados a la izquierda */
+#preparate .tarjeta-paso { align-items: stretch; gap: 8px; text-align: left; }
+#preparate .paso-titulo { margin-top: 8px; }
 
 .frase-calma {
   padding: 16px;
-  border: 2px solid #000000;
+  border: 1px solid #1a1a1a;
   border-radius: 10px;
 }
 
 .frase-calma h3,
 .frase-calma p { margin: 0; }
-.frase-calma p { margin-top: 4px; }
+.frase-calma p { margin-top: 4px; color: #595959; }
 
 @media (max-width: 700px) {
   .pie-preparate { grid-template-columns: 1fr; }
@@ -813,55 +851,64 @@ button:focus-visible {
 /* #endregion */
 
 
-/* #region 9 · W-04 ZONAS SEGURAS Y RUTAS (pendiente de adaptar al wireframe) */
+/* #region 9 · W-04 ZONAS SEGURAS Y RUTAS */
 
 input[type="text"],
 input[type="tel"],
 input[type="search"],
 textarea {
   min-height: 44px;
-  padding: 8px 120px;
+  padding: 8px 12px;
   font: inherit;
   font-size: 1.125rem;
-  border: 2px solid #000000;
+  border: 1px solid #1a1a1a;
   border-radius: 8px;
   background: #fff;
   color: #000;
 }
+
+.zonas-titulo { margin: 0 0 16px; font-size: 2rem; }
 .busqueda-distrito{
   display:flex;
-  gap: 20px;
+  gap: 12px;
   align-items: center;
   justify-content: flex-start;
+  margin-bottom: 8px;
 }
 .busqueda-distrito input[type=text]{
   flex:1;
   min-width: 0;
 }
+.busqueda-distrito .busqueda { min-width: 140px; }
 
 
 /*botones de zonas*/
 .opciones-zonas {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  margin-bottom: 24px;
-  
+  gap: 10px;
+  margin-bottom: 16px;
 }
 .opciones-zonas h2 {
-  margin: 0;
-  text-align: left;
-  font-size: none;
-  margin-top: 10px;
-  margin-bottom: 5px;
+  margin: 8px 0 0;
+  font-size: 1.125rem;
 }
-.opciones-zonas input[type="button"] {
-  width: 750px;
-  max-width: 100%;
+.opciones-zonas button {
+  width: 100%;
   min-height: 48px;
-  margin-bottom: 5px;
+  padding: 8px 16px;
+  background: #fff;
+  text-align: left;
 }
+.opciones-zonas button span {
+  display: block;
+  color: #595959;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+.opciones-zonas button:hover span { color: #fff; }
+/* La zona más cercana va resaltada */
+.opciones-zonas button:first-of-type { background: #cfcfcf; }
 .acciones-ruta .opciones-zonas,
 .acciones-ruta .escuchar-ruta { margin-bottom: 0; }
 
@@ -870,40 +917,35 @@ textarea {
 .opciones-pasos {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 8px;
+  margin-bottom: 12px;
 }
-.opciones-pasos h2 {
-  margin: 0;
-  text-align: left;
+h2.opciones-pasos {
+  margin: 0 0 8px;
+  font-size: 1.125rem;
 }
 .opciones-pasos input[type="button"] {
-  width: 750px;             
-  max-width: 100%;          
-  min-height: 48px;
+  width: 100%;
+  min-height: 44px;
+  background: #fff;
+  font-weight: 400;
+  text-align: left;
+  white-space: normal;
 }
 
 
 
 
-.descripcion-mapa-texto{
-  border: 1px solid #000;
-  border-radius: 8px;
-  padding: 14px;
-  min-height: 90px;
-  margin-top: 10px;
-}
 .confirmacion-llegada{
   margin: 0;
   padding: 15px;
-  border: 1px solid #000;
+  border: 2px solid #1a1a1a;
   border-radius: 8px;
-  background: #e0e0e0;
+  background: #cfcfcf;
   text-align: center;
   font-weight: 700;
-  margin-top:10px
 }
+.confirmacion-llegada p { margin: 0; }
 
 
 
@@ -915,12 +957,13 @@ textarea {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   align-items: stretch;
-  margin-top: 10px;  
 }
 .acciones-ruta input[type="button"] {
-  width: 100%;                     
+  width: 100%;
   min-height: 48px;
-  margin: 0;                        
+  margin: 0;
+  background: #ececec;
+  text-align: center;
 }
 
 
@@ -944,43 +987,49 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 15px;
-  padding: 12px 24px;
-  border: 1px solid #000;
+  padding: 10px 16px;
+  border: 1px solid #1a1a1a;
   border-radius: 8px;
-  background: #fff;
+  background: #d9d9d9;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 .referencias{
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 15px;
-  padding: 12px 24px;
-  border: 1px solid #000;
+  padding: 10px 16px;
+  border: 1px solid #1a1a1a;
   border-radius: 8px;
   background: #fff;
+  color: #595959;
+  font-size: 0.9rem;
 }
+.ruta-alternativa p,
+.referencias p { margin: 0; }
 
 
 /* Lo que solo tiene Referencias */
 .referencias { margin-top: 10px; }
-/* .ingreso-direccion,
-
-
-
-
-
-
-.opciones-zonas, .ruta-alternativa,
-   .referencias, .descripcion-mapa-texto, .confirmacion-llegada */
 .descripcion-mapa-texto-img {
   position: relative;
   flex: 1;
-  min-height: 200px;
+  min-height: 300px;
   overflow: hidden;
-  border: 1px solid #000;
-  border-radius: 8px;
+  border: 1px solid #9e9e9e;
+  border-radius: 4px;
 }
+
+/* Botones + y − del mapa */
+.zoom-mapa {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+  display: flex;
+  gap: 8px;
+}
+.zoom-mapa input { width: 44px; padding: 0; }
 
 .descripcion-mapa-texto-img img {
   position: absolute;
@@ -999,21 +1048,25 @@ textarea {
   border-radius: 8px;
 }
 
-.descripcion-mapa-texto p { margin: 0; }
+.descripcion-mapa-texto p { margin: 0; color: #595959; }
+.titulo-descripcion { margin: 8px 0 0; font-size: 1.125rem; }
+
+@media (max-width: 800px) {
+  .division { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 500px) {
+  .acciones-ruta { grid-template-columns: 1fr; }
+}
 
 
 /* #endregion */
 
 
 /* #region 10 · W-05 CONTACTOS DE CONFIANZA */
-.contactos-cuadro {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 24px;
-  align-items: start;
-}
-
 /* Lista (columna izquierda) */
+#contactos > h2 { margin: 0 0 8px; font-size: 2rem; }
+#contactos > h2 + p { margin: 0 0 24px; color: #595959; }
+
 .lista-contactos {
   border: 1px solid #1a1a1a;
   border-radius: 10px;
@@ -1029,27 +1082,29 @@ textarea {
 }
 
 .fila p { margin: 0; }
-.fila:last-child { border-bottom:1px solid #000; }
+.fila:last-child { border-bottom: none; }
 .lista-contactos .encabezado { font-weight: 700; }
 
 .insignia {
   display: inline-block;
-  padding: 4px 16px;
-  border: 2px solid #000000;
-  border-radius: 8px;
+  padding: 2px 16px;
+  border: 1px solid #1a1a1a;
+  border-radius: 999px;
+  background: #cfcfcf;
+  font-size: 0.9rem;
 }
+.insignia.pendiente { background: #fff; }
 .lista-contactos .accion {
   justify-self: start;
   min-height: 44px;
-  padding: 8px 16px;
-  border: 1px solid #000000;
-  border-radius: 8px;
-  background: #fff;
+  padding: 8px 0;
+  border: none;
+  background: transparent;
   color: #1a1a1a;
   font-weight: 700;
 }
 
-.lista-contactos .accion:hover { background: #1a1a1a; color: #fff; }
+.lista-contactos .accion:hover { background: transparent; color: #1a1a1a; text-decoration: underline; }
 
 .contactos-cuadro{
   display: grid;
@@ -1060,7 +1115,7 @@ textarea {
 /* Formulario Agregar contacto (columna derecha) */
 .agregar-contacto {
   padding: 20px;
-  border: 1px solid #1a1a1a;
+  border: 1px solid #9e9e9e;
   border-radius: 10px;
   background: #f5f5f5;
 }
@@ -1070,14 +1125,15 @@ textarea {
 .agregar-contacto label {
   display: block;
   margin: 12px 0 4px;
+  color: #595959;
+  font-size: 0.9rem;
 }
 
 .agregar-contacto input[type="text"] {
-  box-sizing: border-box;
   width: 100%;
   min-height: 44px;
   padding: 10px 12px;
-  border: 2px solid #1a1a1a;
+  border: 1px solid #1a1a1a;
   border-radius: 8px;
   font: inherit;
 }
@@ -1091,7 +1147,7 @@ textarea {
   padding: 20px;
   border: 1px solid #1a1a1a;
   border-radius: 10px;
-  background: #f5f5f5;
+  background: #fff;
 }
 
 .privacidad h3 { margin-top: 0; }
@@ -1113,47 +1169,43 @@ textarea {
 /* #endregion */
 
 
-/* #region 11 · W-06 SEGUIMIENTO DE FAMILIARES (pendiente de adaptar al wireframe) */
-/* .alerta, .Cronologia, .estado-familiar, .persona-uno/dos/tres,
-   .enviar-frase, .indicaciones */
-/* #endregion */
+/* #region 11 · W-06 SEGUIMIENTO DE FAMILIARES */
+#familiares > h2 { margin: 0 0 16px; font-size: 2rem; }
+
 .alerta{
-  border: 1px solid #000000;     
-  border-radius: 8px;         
-  padding: 12px 16px;         
-  background: #fff; 
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 8px 16px;
+  background: #cfcfcf;
   text-align: center;
 }
+.alerta h3 { margin: 0; font-size: 1.05rem; }
 .columnas{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
 }
+.columna-derecha { display: flex; flex-direction: column; }
 .cronologia{
-  border: 1px solid #000;     
-  border-radius: 8px;         
-  padding: 12px 16px;         
-  background: #fff;  
+  flex: 1;
+  border: 1px solid #9e9e9e;
+  border-radius: 8px;
+  padding: 12px 16px;
+  background: #f5f5f5;
   margin-top: 20px;
   margin-bottom: 8px;
-  width:410px ;
-  min-height: 500px;
 }
-.estado-familiar {
-  border: 2px solid #1a1a1a;
-  border-radius: 10px;
-}
-
+.titulo-cronologia { margin: 0 0 12px; font-size: 1.05rem; }
+.cronologia ul { margin: 0; padding-left: 20px; }
+.cronologia li { margin-bottom: 16px; font-size: 0.95rem; }
 .columna-izquierda{
-  border: 1px solid #000;     
-  border-radius: 8px;         
-  padding: 12px 16px;         
-  background: #fff;  
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 0 8px;
+  background: #fff;
   margin-top: 20px;
-  margin-bottom:8px;
-  width:1000px ;
-  min-height:500px;
+  margin-bottom: 8px;
 }
 
 .fila-estado {
@@ -1168,53 +1220,46 @@ textarea {
 
 .fila-estado h3,
 .fila-estado p { margin: 0; font-size: 1rem; }
+.fila-estado > p:first-child { font-weight: 700; }
 .encabezado-estado { font-weight: 700; background: #ffffff; }
 
-.estado,
-.zona-afectada {
-  border: 2px solid #1a1a1a;
-  border-radius: 8px;
-  padding: 6px 12px;
+/* Estado: etiqueta con fondo según la situación */
+.estado {
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+  padding: 4px 8px;
+  background: #ececec;
   text-align: center;
 }
+.estado p { font-size: 0.85rem; font-weight: 700; }
+.persona-dos .estado { background: #fff; }
+.persona-tres .estado { background: #bdbdbd; }
+
+.zona-afectada p { color: #595959; font-size: 0.9rem; }
 
 @media (max-width: 600px) {
   .fila-estado { grid-template-columns: 1fr 1fr; }  
 }
 
 .indicaciones{
-  border: 2px solid #1a1a1a;
+  border: 1px solid #1a1a1a;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 16px;
   margin-bottom: 10px;
   text-align: left;
   padding: 12px 16px;
+}
+.indicaciones p { margin: 0; color: #595959; }
+.indicaciones h2 { margin: 0 0 8px; font-size: 1.05rem; }
 
+/* Enviar frase lista */
+.enviar-frase h2 { margin: 8px 0; font-size: 1.125rem; }
+.enviar-frase input { margin: 0 8px 8px 0; }
+
+@media (max-width: 900px) {
+  .columnas { grid-template-columns: 1fr; }
 }
-.indicaciones p{
-  font-size: 1.25rem; 
-  font-weight: 400; 
-  font-family: Arial, sans-serif;
-  color: #000;
-  padding:10px 16px;
-  margin:0;
-}
-.indicaciones h2{
-  font-size: 1.25rem; 
-  font-weight: 400; 
-  font-family: Arial, sans-serif;
-  color: #000;
-  padding:10px 16px;
-  margin:0 0 4px;
-}
-.cuadro {
-  text-align: right;        
-  display: flex;
-  align-items: center;       
-  justify-content: center;   
-  padding: 15px 20px;        
-  min-height: 80px;         
-}
+/* #endregion */
 
 
 /* #region 12 · PIE DE PÁGINA */
@@ -1223,18 +1268,126 @@ footer {
   border-top: 1px solid #1a1a1a;
   text-align: center;
 }
+footer p { margin: 4px 0; color: #595959; font-size: 0.9rem; }
 /* #endregion */
 
-/* Wireframes sin CSS todavía: 10 Ficha de apoyo, 11 Pedir ayuda sin hablar,
-   12 Mis lugares, 13 Fin de la emergencia. */
+/* #region W-10 · MI FICHA DE APOYO */
+.ficha-rejilla {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+.ficha-formulario { display: grid; gap: 20px; }
+.ficha-formulario .campo label { font-weight: 700; }
+
+/* El resto del estilo de los campos viene de input[type="text"] (región 9) */
+.bloque-wireframe input[type="text"] {
+  width: 100%;
+  min-height: 48px;
+}
+
+.ficha-formulario .acciones { margin-top: 12px; }
+.ficha-formulario .acciones button { min-width: 190px; }
+
+.ficha-lateral { display: grid; gap: 16px; }
+
+.vista-ayuda {
+  min-height: 240px;
+  padding: 20px;
+  border: 1px solid #9e9e9e;
+  border-radius: 10px;
+  background: #f5f5f5;
+}
+
+.vista-ayuda h3 { margin: 0 0 16px; font-size: 1.05rem; }
+
+/* Líneas grises que simulan el texto de la ficha */
+.lineas-vista { display: grid; gap: 16px; }
+
+.lineas-vista span {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: #1a1a1a;
+  opacity: 0.2;
+}
+
+.lineas-vista span:nth-child(3n + 2) { width: 95%; }
+.lineas-vista span:nth-child(3n) { width: 90%; }
+
+@media (max-width: 800px) {
+  .ficha-rejilla { grid-template-columns: 1fr; }
+}
+/* #endregion */
+
+/* #region W-13 · FIN DE LA EMERGENCIA */
+.aviso-fin {
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 2px solid #1a1a1a;
+  border-radius: 8px;
+  background: #d9d9d9;
+  text-align: center;
+}
+.aviso-fin h2 { margin: 0; font-size: 1.5rem; }
+
+#fin-emergencia .indeci-cabecera { margin-bottom: 24px; }
+
+.titulo-volver { margin: 0 0 12px; font-size: 1.25rem; }
+
+.fin-columnas {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.antes-volver {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-volver {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+}
+.item-volver input {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.contactos-informados {
+  padding: 16px;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+}
+.contactos-informados h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.contactos-informados p { margin: 0; color: #595959; font-size: 0.9rem; }
+
+input.boton-entendido { min-width: 200px; margin-top: 32px; }
+
+@media (max-width: 800px) {
+  .fin-columnas { grid-template-columns: 1fr; }
+}
+/* #endregion */
 
    /* #region W-11 · PEDIR AYUDA SIN HABLAR */
 
 .pedir-ayuda { margin-bottom: 48px; }
 
 /* Título e introducción */
-.titulo-ayuda h1 { margin: 0 0 8px; font-size: 2rem; }
-.introduccion-ayuda { margin: 0 0 24px; font-size: 1rem; }
+.titulo-ayuda h2 { margin: 0 0 8px; font-size: 2rem; }
+.introduccion-ayuda { margin: 0 0 24px; font-size: 1rem; color: #595959; }
 
 /* Tres cuadros grandes */
 .tipo-ayuda {
@@ -1271,10 +1424,10 @@ footer {
 }
 
 .titulo1,
-.titulo2 { margin: 0; font-size: 1.25rem; font-weight: 700; }
+.titulo2 { margin: 0; font-size: 1.5rem; font-weight: 700; }
 
 .cuadro1:hover,
-.cuadro2:hover { background: #ffffff; color: #fff; }
+.cuadro2:hover { background: #1a1a1a; color: #fff; }
 
 .cuadro1:hover::before,
 .cuadro2:hover::before { border-color: #fff; background: #1a1a1a; }
@@ -1290,42 +1443,46 @@ footer {
 
 .envio-solicitud {
   padding: 20px;
-  border: 2px solid #1a1a1a;
+  border: 1px solid #1a1a1a;
   border-radius: 10px;
   background: #fff;
 }
 .enviar-frase{
+  grid-column: 1 / -1;
   margin-top: 8px;
 }
-.envio-solicitud h1 { margin: 0 0 8px; font-size: 1.25rem; }
+.envio-solicitud h3 { margin: 0 0 8px; font-size: 1.05rem; }
 
 .ubicacion-tipoayuda-ficha {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 16px;
+  gap: 4px 6px;
   margin-bottom: 8px;
 }
 
 .ubicacion,
 .tipoayuda,
 .ficha,
-.conexion { margin: 0; font-size: 1rem; }
+.conexion { margin: 0; font-size: 1rem; color: #595959; }
+.ubicacion::after,
+.tipoayuda::after { content: " ·"; }
+.conexion { font-size: 0.875rem; }
 
 .estado-solicitud {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  border: 2px solid #1a1a1a;
+  border: 1px solid #1a1a1a;
   border-radius: 10px;
-  background: #ffffff;
+  background: #d9d9d9;
   text-align: center;
 }
 
 .estado-mensaje { margin: 0; font-size: 1.25rem; font-weight: 700; }
 
 /* Cancelar */
-.cancelar-boton {
+input.cancelar-boton {
   min-width: 200px;
   min-height: 52px;
   background: #d9d9d9;
@@ -1354,7 +1511,7 @@ footer {
 .boton-agregar-lugares { grid-column: 1 / -1; }
 
 .titulo-lugares { margin: 0 0 8px; font-size: 2rem; }
-.introduccion-lugares { margin: 0; font-size: 1rem; }
+.introduccion-lugares { margin: 0; font-size: 1rem; color: #595959; }
 
 /* Columna izquierda: lista de lugares + agregar */
 .izquierda-lugares {
@@ -1401,22 +1558,22 @@ footer {
 
 .descripcion-ubicacion1,
 .descripcion-ubicacion2,
-.descripcion-ubicacion3 { margin: 0; font-size: 1rem; }
+.descripcion-ubicacion3 { margin: 0; font-size: 0.9rem; color: #595959; }
 
 /* Editar: texto en negrita, sin marco (se mantiene el área táctil de 44px) */
-.editar {
+input.editar {
   min-width: 44px;
   min-height: 44px;
   padding: 8px 12px;
-  border: #ffffff;
+  border: none;
   background: transparent;
   font-weight: 700;
   font-size: 1rem;
 }
-.editar:hover { background: transparent; color: #000; text-decoration: underline; }
+input.editar:hover { background: transparent; color: #000; text-decoration: underline; }
 
 /* + Agregar lugar: ancho completo de la columna */
-.boton-agregar {
+input.boton-agregar {
   width: 100%;
   min-height: 52px;
   background: #d9d9d9;
@@ -1426,12 +1583,12 @@ footer {
 /* Columna derecha: panel "Qué avisos recibo" */
 .derecha {
   padding: 20px;
-  border: 1px solid #1a1a1a;
+  border: 1px solid #9e9e9e;
   border-radius: 10px;
-  background: #ffffff;
+  background: #f5f5f5;
 }
 
-.opcines-titulo { margin: 0 0 12px; font-size: 1.25rem; }
+.opciones-titulo { margin: 0 0 12px; font-size: 1.25rem; }
 
 .linea-zona-actual,
 .linea-lugares-guardados {
@@ -1456,7 +1613,7 @@ footer {
   margin: 0;
   border: 2px solid #1a1a1a;
   border-radius: 999px;
-  background: #fff;
+  background: #ececec;
   cursor: pointer;
 }
 
@@ -1468,8 +1625,9 @@ footer {
   left: 3px;
   width: 22px;
   height: 22px;
+  border: 2px solid #1a1a1a;
   border-radius: 50%;
-  background: #1a1a1a;
+  background: #fff;
   transition: transform 0.2s;
 }
 
@@ -1478,7 +1636,7 @@ footer {
 
 .linea-zona-actual input[type="checkbox"]:checked::before,
 .linea-lugares-guardados input[type="checkbox"]:checked::before {
-  background: #fff;
+  border-color: #fff;
   transform: translateX(24px);
 }
 
@@ -1489,10 +1647,10 @@ footer {
 }
 
 /* Botón Guardar */
-.agregar-lugares {
+input.agregar-lugares {
   min-width: 200px;
   min-height: 52px;
-  background: #d9d9d9;
+  background: #cfcfcf;
   font-weight: 700;
 }
 

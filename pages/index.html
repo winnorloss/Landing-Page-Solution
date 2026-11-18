@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing-Page-Alerta360</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -15,14 +16,14 @@
             <img src="../assets/images/logo-alerta360.png" alt="" width="40" height="40">
             <span>Alerta360</span>
         </a>
-        <nav arial-label="Principal">
+        <nav aria-label="Principal">
             <a href="#inicio">Inicio</a>
             <a href="#mi-perfil">Mi perfil</a>
             <a href="#simulacro">Simulacro</a>
             <a href="#zonas-seguras">Zonas seguras</a>
             <a href="#contactos">Contactos</a>
             <a href="#familiares">Familiares</a>
-            <a href="comenzar">Comenzar</a>
+            <a href="#mi-perfil" class="boton boton-principal">Comenzar</a>
         </nav>
     </header>
 
@@ -33,13 +34,13 @@
             <div class="mapa-inicio">
                 <div class="texto-inicio">
                     <h1>Una alerta de emergencia que sí puedes percibir </h1>
-                    <p>Alerta360 te avisa con vibracion, luces, voz y texto facil</p> 
-                    <a href="#mi-perfil" class="boton">Configurar mi perfil</a>
+                    <p>Alerta360 te avisa con vibración, luces, voz y texto fácil, según lo que necesites.</p> 
+                    <a href="#mi-perfil" class="boton boton-principal">Configurar mi perfil</a>
                     <a href="#simulacro" class="boton">Probar un simulacro</a>
                 </div> 
 
                 <div class="mapa">
-                    <img src=""
+                    <img src="" alt=""
                     width="750" height="500">
                 </div>
             </div>
@@ -51,7 +52,7 @@
                     <article class="tarjeta">
                         <img src="" alt="" width="48" height="48" class="icono-vibracion">
                         <h3>Vibración</h3>
-                        <p>Patrón propio inclusio silencio</p>
+                        <p>Patrón propio, incluso en silencio</p>
                     </article>
                 
                     <article class="tarjeta">
@@ -63,7 +64,7 @@
                     <article class="tarjeta">
                         <img src="" alt="" width="48" height="48" class="icono-voz">
                         <h3>Voz</h3>
-                        <p>Lectura de voz alta</p>
+                        <p>Lectura en voz alta</p>
                     </article>
                 
                     <article class="tarjeta">
@@ -74,7 +75,7 @@
                 
             </div>
 
-            <h3> Para quién es </h3> <!--Cuadros informativos 2da linea-->
+            <h2>Para quién es</h2> <!--Cuadros informativos 2da linea-->
             <div class="tarjetas tres">
                 <article class="tarjeta">
                     <h3>Auditivo</h3>
@@ -83,12 +84,12 @@
             
                 <article class="tarjeta">
                     <h3>Visual</h3>
-                    <p>Destellos continuos</p>
+                    <p>Avisos que se escuchan y se leen con lector</p>
                 </article>
                 
                 <article class="tarjeta">
                     <h3>Cognitivo</h3>
-                    <p>Avisos que se sienten y se ven</p>
+                    <p>Un paso a la vez, con dibujos</p>
                 </article>
             </div>
             <section id="instrucciones-sin-conexion" class="bloque-wireframe" aria-labelledby="titulo-instrucciones">
@@ -127,12 +128,12 @@
             <div class="perfil">
                 
                 <div class="perfil-config">
-                    <h1 class="titulo-miperfil">Mi perfil de avisos</h1>
-                    <p class="descripcion-titulo-miperfil">Elige como quieres recibir una alerta y prueba antes de guardar</p>
+                    <h2 class="titulo-miperfil">Mi perfil de avisos</h2>
+                    <p class="descripcion-titulo-miperfil">Elige cómo quieres recibir una alerta y pruébalo antes de guardar.</p>
                     
-                    <h3>1. Perfil rapido</h3>
+                    <h3>1. Perfil rápido</h3>
                     <div class="tarjetas cuatro">
-                        <article class="tarjeta">
+                        <article class="tarjeta seleccionada">
                             <h3>Auditivo</h3>
                         </article>
                         <article class="tarjeta">
@@ -150,13 +151,13 @@
                     <div class="opcion">
                         <h3>2. Canales</h3>
                          <div class="contenedor-boton">
-                            <label for="sw-vibracion">Vibracion</label>
-                            <input type="checkbox" id="sw-vibracion" class="toggle" role="switch">
+                            <label for="sw-vibracion">Vibración</label>
+                            <input type="checkbox" id="sw-vibracion" class="toggle" role="switch" checked>
                         </div>
 
                         <div class="contenedor-boton">
                             <label for="sw-luz">Destellos de luz</label>
-                            <input type="checkbox" id="sw-luz" class="toggle" role="switch">
+                            <input type="checkbox" id="sw-luz" class="toggle" role="switch" checked>
                         </div>
 
                         <div class="contenedor-boton">
@@ -165,8 +166,8 @@
                         </div>
                     
                         <div class="contenedor-boton">
-                            <label for="sw-texto">Texto facil de leer</label>
-                            <input type="checkbox" id="sw-texto" class="toggle" role="switch">
+                            <label for="sw-texto">Texto fácil de leer</label>
+                            <input type="checkbox" id="sw-texto" class="toggle" role="switch" checked>
                         </div>
 
 
@@ -181,8 +182,8 @@
                         </div>
 
                         <div class="botones">
-                            <input type="button" value="Probar configuracion">
-                            <input type="button" value="Guardar">
+                            <input type="button" value="Probar configuración">
+                            <input type="button" class="boton-principal" value="Guardar">
                         </div> 
                     </div>
                 </div>                   
@@ -190,13 +191,13 @@
                 <aside id="vista-previa-simulacro" aria-label="Vista previa en vivo de la alerta">
                     <h3 id="titulo-vista" class="vista-titulo">Vista previa en vivo</h3>
                     <div class="telefono">
-                        <p class="alerta-oficial"ALERTA OFICIAL></p>
+                        <p class="alerta-oficial">ALERTA OFICIAL</p>
                         <div class="datos-alerta">
                             <h4>SISMO</h4>
-                            <p>Gravedad:ALTA</p>
+                            <p>Gravedad: ALTA</p>
                         </div>
                         <div class="vista-previa-salir"><strong>SALIR</strong><br>de forma segura</div>
-                        <input type="button" value=" Escuchar">
+                        <input type="button" value="▶ Escuchar">
                         <input type="button" value="Ya vi el aviso">
                     </div>
                 </aside>
@@ -204,6 +205,7 @@
             </div>
             <section id="avisos-accesibles" class="bloque-wireframe" aria-labelledby="titulo-avisos">
                     <h2 id="titulo-avisos">Avisos accesibles</h2>
+                <p>Elige cómo quieres entender cada aviso oficial.</p>
                 <div class="avisos-rejilla">
 
                     <div class="avisos-columna">
@@ -254,16 +256,16 @@
                                 <div class="campo">
                                     <label for="pref-voz">Voz</label>
                                     <select id="pref-voz">
-                                        <option selected>Femenina</option>
-                                        <option>Masculina</option>
+                                        <option selected>Voz: Femenina</option>
+                                        <option>Voz: Masculina</option>
                                     </select>
                                 </div>
                                 <div class="campo">
                                     <label for="pref-velocidad">Velocidad</label>
                                     <select id="pref-velocidad">
-                                        <option>Lenta</option>
-                                        <option selected>Normal</option>
-                                        <option>Rápida</option>
+                                        <option>Velocidad: lenta</option>
+                                        <option selected>Velocidad: normal</option>
+                                        <option>Velocidad: rápida</option>
                                     </select>
                                 </div>
                             </div>
@@ -277,6 +279,59 @@
 
                 </div>
                 </section>
+
+            <section id="ficha-apoyo" class="bloque-wireframe" aria-labelledby="titulo-ficha">
+                <h2 id="titulo-ficha">Mi ficha de apoyo</h2>
+                <p>Información que ayudará a quien te asista. Tú decides qué compartir.</p>
+
+                <div class="ficha-rejilla">
+
+                    <form class="ficha-formulario" novalidate>
+                        <div class="campo">
+                            <label for="ficha-comunicacion">Cómo me comunico (señas, texto, voz)</label>
+                            <input type="text" id="ficha-comunicacion" name="comunicacion" autocomplete="off">
+                        </div>
+                        <div class="campo">
+                            <label for="ficha-condiciones">Condiciones o medicinas que tomo</label>
+                            <input type="text" id="ficha-condiciones" name="condiciones" autocomplete="off">
+                        </div>
+                        <div class="campo">
+                            <label for="ficha-alergias">Alergias importantes</label>
+                            <input type="text" id="ficha-alergias" name="alergias" autocomplete="off">
+                        </div>
+                        <div class="campo">
+                            <label for="ficha-contacto">Persona a quien llamar</label>
+                            <input type="text" id="ficha-contacto" name="contacto" autocomplete="off">
+                        </div>
+
+                        <div class="acciones">
+                            <button type="button" class="boton-principal">Guardar ficha</button>
+                            <button type="button">Ver vista previa</button>
+                        </div>
+                    </form>
+
+                    <div class="ficha-lateral">
+                        <div class="vista-ayuda" role="region" aria-labelledby="titulo-vista-ayuda">
+                            <h3 id="titulo-vista-ayuda">Vista para quien me ayuda</h3>
+                            <div class="lineas-vista" aria-hidden="true">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+
+                        <label class="interruptor">
+                            <span>Compartir mi ficha al pedir ayuda</span>
+                            <input type="checkbox" role="switch" checked>
+                            <span class="interruptor-pista" aria-hidden="true"></span>
+                        </label>
+                    </div>
+
+                </div>
+            </section>
 
         </section>
 
@@ -322,19 +377,20 @@
             </section>
             
             <div class="titulo-simulacro">
+                <h2>ESTO ES UN SIMULACRO · Funciona con tus preferencias</h2>
             </div>
             <div class="simulacro-cuadros">
                 <div class="bloque-indeci">
 
                     <div class="indeci-cabecera">
-                        <img src="../assets/images/" alt=" " width="64" height="64">
+                        <img src="../assets/images/" alt="" width="64" height="64">
                         <div>
                             <p><strong>INDECI</strong></p>
                             <p class="detalle">Hoy 14:32 · Lima Centro</p>
                         </div>
                     </div>
                     <h3>SISMO</h3>
-                    <p><strong>Gravedad:</strong></p>
+                    <p><strong>Gravedad:</strong> ALTA</p>
                 <div class="sub-bloque-indeci">SALIR de forma segura</div>
                 </div>
 
@@ -348,7 +404,7 @@
 
                     <div class="paso-contenido">
                         <div class="pictograma">
-                            <img src="../assets/images/" alt=" " width="100 " height="100 ">
+                            <img src="../assets/images/" alt="" width="100" height="100">
                         </div>
                         <div>
                             <p class="paso-texto"><strong>Sal del edificio por la escalera</strong></p>
@@ -360,7 +416,7 @@
 
                     <div class="botones-paso">
                         <input type="button" value="◀ Atrás" id="boton-atras">
-                        <input type="button" value="Siguiente ▶" id="boton-siguiente">
+                        <input type="button" class="boton-principal" value="Siguiente ▶" id="boton-siguiente">
                     </div>
                 </div>
             </div>
@@ -369,27 +425,27 @@
             <div class="avisos-simulacro">
                 <div class="lista-instrucciones">
                     <h2>Ver todas las instrucciones</h2>
-                    <input type="button" value="Abrir lista de instrucciones">
+                    <input type="button" value="Abrir lista completa">
                 </div>
                 
                 <div class="consejo">
                     <h2>Lee a tu ritmo</h2>
-                    <p>El paso no desaparece hasta que pulses el boton "siguiente"</p>
+                    <p>El paso no desaparece hasta que pulses el botón «Siguiente»</p>
                 </div>
 
                 <div class="recordatorio">
                     <h2>Recordatorio</h2>
-                    <p>Si pasas 30seg sin acción, se repite la instrucción</p>
+                    <p>Si pasan 30 segundos sin acción, se repite la instrucción</p>
                 </div>
             </div>
 
 
             <div class="simulacro-resultado">
                 <h2>Resultado del simulacro</h2>
-                <p>Tu desempeño en el simulacro fue...</p>
+                <p>Tu tiempo de reacción: 6 segundos · Canales probados: vibración, luces, texto</p>
             </div>
             <div class="botones-simulacro"> 
-                <input type="button" value="Iniciar simulacro">
+                <input type="button" class="boton-principal" value="Iniciar simulacro">
                 <input type="button" value="Ajustar preferencias">
             </div>
         </section>
@@ -404,40 +460,45 @@
 
                     <div class="busqueda-distrito">
                         
-                        <input type="text" class="barra-direccion" placeholder="Ingresa tu direccion o distrito">
+                        <input type="text" class="barra-direccion" placeholder="Escribe tu distrito o dirección" aria-label="Dirección o distrito">
                         <div class="boton-busqueda">
-                            <input type="button" class="busqueda" value="Buscar">
+                            <input type="button" class="busqueda boton-principal" value="Buscar">
                         </div>
                     </div>
                     
                     <div class="opciones-zonas">
-                        <h2>Zona mas cercana</h2>
-                        <input type="button" value="Zona segura 1">
-                        <input type="button" value="Zona segura 2">
-                        <input type="button" value="Zona segura 3">
+                        <h2>Zona más cercana</h2>
+                        <button type="button"><strong>Parque Central</strong><span>250 m · Punto de encuentro</span></button>
+                        <button type="button"><strong>Colegio San Martín</strong><span>600 m · Zona segura</span></button>
+                        <button type="button"><strong>Losa deportiva</strong><span>900 m · Zona segura</span></button>
                     </div>
                     
-                    <h2 class="opciones-pasos">Ruta en texto(paso a paso)</h2>
+                    <h2 class="opciones-pasos">Ruta en texto (paso a paso)</h2>
                     <div class="opciones-pasos">
                         
-                        <input type="button" value="Paso 1">
-                        <input type="button" value="Paso 2">
-                        <input type="button" value="Paso 3">
+                        <input type="button" value="1. Avanza 50 m al norte (vibración: avanzar)">
+                        <input type="button" value="2. Gira a la izquierda en la esquina">
+                        <input type="button" value="3. Camina 100 m hasta el parque">
                     </div>
 
                     <div class="ruta-alternativa">
-                        <p>Ruta alternativa</p>
+                        <p>⚠ Camino bloqueado → ver ruta alternativa</p>
                     </div>
                     <div class="referencias">
-                        <p>Referencias cercanas</p>
+                        <p>Referencias cercanas: puerta a tu derecha, escalera a 10 m</p>
                     </div>
                 </div>
                 
                 <div class="lado-derecho-zonas">
                     <div class="descripcion-mapa-texto-img">
-                        <img src="../assets/images/">
+                        <img src="../assets/images/" alt="">
+                        <div class="zoom-mapa">
+                            <input type="button" value="+" aria-label="Acercar mapa">
+                            <input type="button" value="−" aria-label="Alejar mapa">
+                        </div>
 
                     </div>
+                    <h2 class="titulo-descripcion">Descripción del mapa en texto</h2>
                     <div class="descripcion-mapa-texto">
                         <p>...</p>
 
@@ -445,7 +506,7 @@
 
                     
                     <div class="confirmacion-llegada">
-                        <p>Llegaste a tu destino</p>
+                        <p>«Llegaste al lugar seguro»</p>
                     </div>
                     <div class="acciones-ruta">
                         <div class="escuchar-ruta">
@@ -462,7 +523,7 @@
 
         <section id="contactos"><!--Contactos-->
             <h2>Contactos de confianza</h2>
-            <p>Ellos sabrán cómo estas cuando tu lo indiques(max.5).</p>
+            <p>Ellos sabrán cómo estás cuando tú lo indiques (máx. 5).</p>
 
             <div class="contactos-cuadro">
 
@@ -475,24 +536,24 @@
                     </div>
 
                     <div class="fila contacto">
-                        <p><strong>P1</strong></p>
+                        <p><strong>Mamá</strong></p>
                         <p>Familiar</p>
                         <p><span class="insignia">Aceptó</span></p>
-                        <input type="button" class="accion" value="Quitar" aria-label="Quitar a P1">
+                        <input type="button" class="accion" value="Quitar" aria-label="Quitar a Mamá">
                     </div>
 
                     <div class="fila contacto">
-                        <p><strong>P2</strong></p>
+                        <p><strong>Hermano</strong></p>
                         <p>Familiar</p>
-                        <p><span class="insignia">Pendiente</span></p>
-                        <input type="button" class="accion" value="Reenviar" aria-label="Reenviar invitación a P2">
+                        <p><span class="insignia pendiente">Pendiente</span></p>
+                        <input type="button" class="accion" value="Reenviar" aria-label="Reenviar invitación a Hermano">
                     </div>
 
                     <div class="fila contacto">
-                        <p><strong>P3</strong></p>
+                        <p><strong>Vecina Rosa</strong></p>
                         <p>Cuidadora</p>
                         <p><span class="insignia">Aceptó</span></p>
-                        <input type="button" class="accion" value="Quitar" aria-label="Quitar a P3">
+                        <input type="button" class="accion" value="Quitar" aria-label="Quitar a Vecina Rosa">
                     </div>
                 </div>
 
@@ -509,7 +570,7 @@
                     <input type="text" id="relacion-contacto" name="relacion-contacto" autocomplete="off">
 
                     <div class="enviar-contacto">
-                        <input type="button" value="Enviar invitación">
+                        <input type="button" class="boton-principal" value="Enviar invitación">
                     </div>
                 </div>
 
@@ -520,11 +581,11 @@
             <div class="privacidad">
                 <h3>Privacidad</h3>
                 <input type="checkbox" id="compartir-ubicacion">
-                <label for="compartir-ubicacion">Compartir ubicación con contactos</label>
+                <label for="compartir-ubicacion">Compartir mi ubicación aproximada solo cuando yo responda</label>
             </div>
 
             <div class="guardar-contactos">
-                <input type="button" value="Guardar cambios">
+                <input type="button" class="boton-principal" value="Guardar cambios">
             </div>
             
         </section>
@@ -532,7 +593,7 @@
         <section id="familiares"><!--Familiares-->
             <h2>Seguimiento de mis familiares</h2>
             <div class="alerta">
-                <h3>Alerta activa: SIMSMO - Lima Centro - 14:32</h3>
+                <h3>Alerta activa: SISMO · Lima Centro · 14:32</h3>
             </div>
             <div class="columnas">
 
@@ -540,31 +601,31 @@
                 <div class="columna-izquierda">
 
                     <div class="fila-estado encabezado-estado">
-                        <h3>Estado de mi familiar</h3>
+                        <h3>Persona</h3>
                         <h3>Alerta recibida</h3>
                         <h3>Estado</h3>
                         <h3>¿En zona afectada?</h3>
                     </div>
 
                     <div class="fila-estado persona-uno">
-                        <p>Persona 1</p>
-                        <p>Hora 1</p>
-                        <div class="estado"><p>En zona segura</p></div>
-                        <div class="zona-afectada"><p>No</p></div>
+                        <p>Papá</p>
+                        <p>14:33</p>
+                        <div class="estado"><p>A SALVO</p></div>
+                        <div class="zona-afectada"><p>Sí · aprox.</p></div>
                     </div>
 
                     <div class="fila-estado persona-dos">
-                        <p>Persona 2</p>
-                        <p>Hora 2</p>
-                        <div class="estado"><p>En zona segura</p></div>
-                        <div class="zona-afectada"><p>No</p></div>
+                        <p>Abuela</p>
+                        <p>14:32</p>
+                        <div class="estado"><p>SIN RESPUESTA</p></div>
+                        <div class="zona-afectada"><p>No compartida</p></div>
                     </div>
 
                     <div class="fila-estado persona-tres">
-                        <p>Persona 3</p>
-                        <p>Hora 3</p>
-                        <div class="estado"><p>En zona segura</p></div>
-                        <div class="zona-afectada"><p>No</p></div>
+                        <p>Tía Luz</p>
+                        <p>14:34</p>
+                        <div class="estado"><p>NECESITA AYUDA</p></div>
+                        <div class="zona-afectada"><p>Sí · aprox.</p></div>
                     </div>
 
                     
@@ -574,12 +635,12 @@
                 <div class="columna-derecha">
                     
                     <div class="cronologia">
-                        <h3 class="titulo-cronologia">Cronologia</h3>
+                        <h3 class="titulo-cronologia">Cronología</h3>
                         <ul>
-                            <li>14:32 - Alerta recibida</li>
-                            <li>14:33 - Ubicación actualizada</li>
-                            <li>14:34 - Ubicación actualizada</li>
-                            <li>14:35 - Ubicación actualizada</li>
+                            <li>14:32 · Alerta emitida</li>
+                            <li>14:33 · Papá recibió</li>
+                            <li>14:37 · Abuela sin respuesta</li>
+                            <li>14:38 · Tía Luz pide ayuda</li>
                         </ul>
                     </div>
 
@@ -587,7 +648,7 @@
                 <div class="enviar-frase">
                     <h2>Enviar frase lista</h2>
                     <input type="button" value="Voy por ti">
-                    <input type="button" value="Quedate donde estas">
+                    <input type="button" value="Quédate donde estás">
                     <input type="button" value="Estoy llegando">
                     <input type="button" value="Llama si puedes">
                 </div>
@@ -598,7 +659,7 @@
             
 
             <div class="indicaciones">
-                <h2>Como acomapañar...</h2>
+                <h2>Cómo acompañar a tu familiar (según su discapacidad)</h2>
                 <p>...</p>
             </div>
                 
@@ -609,40 +670,40 @@
 
         <div class="pedir-ayuda"><!--Pedir ayuda sin hablar/wireframe -->
             <div class="titulo-ayuda">
-                <h1 class="titulo-ayuda"> Pedir ayuda sin hablar</h1>
-                <p class="introduccion-ayuda">Con un toque se envia tu ubicacion y tipo de ayuda por texto</p>
+                <h2 class="titulo-ayuda">Pedir ayuda sin hablar</h2>
+                <p class="introduccion-ayuda">Con un toque se envía tu ubicación y tipo de ayuda por texto</p>
             </div>
             <div class="tipo-ayuda">
-                <div class="cuadro1">
-                    <h2 class="titulo1">BOMBEROS</h2>
-                </div>
+                <button type="button" class="cuadro1">
+                    <span class="titulo1">BOMBEROS</span>
+                </button>
 
-                <div class="cuadro2">
-                    <h2 class="titulo2">AMBULANCIA</h2>
-                </div>
+                <button type="button" class="cuadro2">
+                    <span class="titulo2">AMBULANCIA</span>
+                </button>
 
-                <div class="cuadro1">
-                    <h2 class="titulo1">POLICIA</h2>
-                </div>
+                <button type="button" class="cuadro1">
+                    <span class="titulo1">POLICÍA</span>
+                </button>
 
             </div>
             <div class="confirmacion-ayuda">
 
                 <div class="envio-solicitud">
-                    <h1 class="1era-linea-solicitud">Se enviara</h1>
+                    <h3 class="titulo-solicitud">Se enviará</h3>
 
                     <div class="ubicacion-tipoayuda-ficha">
-                        <p class="ubicacion">Ubicacion aproximada</p>
+                        <p class="ubicacion">Ubicación aproximada</p>
                         <p class="tipoayuda">Tipo de ayuda</p>
                         <p class="ficha">Mi ficha de apoyo</p>
                     </div>
 
-                    <p class="conexion">Sin conexion: se guarda y reintenta</p>
+                    <p class="conexion">Sin conexión: se guarda y reintenta</p>
 
                 </div>
 
                 <div class="estado-solicitud">
-                    <h1 class="estado-mensaje">Estado:Solicitud enviada<br>Ayuda en camino</h1>
+                    <p class="estado-mensaje">Estado: Solicitud enviada<br>Ayuda en camino</p>
                 </div>
             </div>
             <div class="cancelar">
@@ -653,69 +714,69 @@
         <div class="lugares"><!--Mis lugares/wireframe-->
             
             <div class="encabezado-lugares">
-                <h1 class="titulo-lugares">Mis lugares</h1>
-                <p class="introduccion-lugares">Recibe avisos y rutas pensadas para cada lugar donde estes</p>
+                <h2 class="titulo-lugares">Mis lugares</h2>
+                <p class="introduccion-lugares">Recibe avisos y rutas pensadas para cada lugar donde estés</p>
             </div>
             <div class="izquierda-lugares">
                 <div class="opciones-lugares">
                     <div class="ubicacion1">
                             <div class="icono">
-                                <img src="../assets/icons/">
+                                <img src="../assets/icons/" alt="">
                             </div>
                             <div class="lugar-ubicacion1">
-                                <h1 class="nombre-ubicacion1 ">Casa</h1>
-                                <p class="descripcion-ubicacion1">Av.Peru 123 - Zona:Lima Centro</p>
+                                <h3 class="nombre-ubicacion1">Casa</h3>
+                                <p class="descripcion-ubicacion1">Av. Perú 123 - Zona: Lima Centro</p>
                             </div>
                             <div class="editar-ubicacion1">
-                                <input type="button" class="editar" value="editar">
+                                <input type="button" class="editar" value="Editar">
                             </div>
                     </div>
 
                     <div class="ubicacion2">
                             <div class="icono">
-                                <img src="../assets/icons/">
+                                <img src="../assets/icons/" alt="">
                             </div>
                             <div class="lugar-ubicacion2">
-                                <h1 class="nombre-ubicacion2 ">Trabajo</h1>
-                                <p class="descripcion-ubicacion2">Jr. Lima 456 - Zona:Cercado</p>
+                                <h3 class="nombre-ubicacion2">Trabajo</h3>
+                                <p class="descripcion-ubicacion2">Jr. Lima 456 - Zona: Cercado</p>
                             </div>
                             <div class="editar-ubicacion2">
-                                <input type="button" class="editar" value="editar">
+                                <input type="button" class="editar" value="Editar">
                             </div>
                     </div>
 
                     <div class="ubicacion3">
                             <div class="icono">
-                                <img src="../assets/icons/">
+                                <img src="../assets/icons/" alt="">
                             </div>
                             <div class="lugar-ubicacion3">
-                                <h1 class="nombre-ubicacion3 ">Casa</h1>
-                                <p class="descripcion-ubicacion3">Av. Universitaria - Zona:San miguel</p>
+                                <h3 class="nombre-ubicacion3">Universidad</h3>
+                                <p class="descripcion-ubicacion3">Av. Universitaria - Zona: San Miguel</p>
                             </div>
                             <div class="editar-ubicacion3">
-                                <input type="button" class="editar" value="editar">
+                                <input type="button" class="editar" value="Editar">
                             </div>
                     </div>
                     
                 </div>
-
+                <input type="button" class="boton-agregar" value="+ Agregar lugar">
             </div>
 
             <div class="derecha">
 
                 <div class="opciones-avisos">
-                    <h1 class="opcines-titulo">Qué avisos recibo</h1>
+                    <h3 class="opciones-titulo">Qué avisos recibo</h3>
                 </div>
                 <div class="linea-zona-actual">
-                    <p class="zona-actual">Solo los de mi zona actual</p>
-                    <input type="checkbox">
+                    <label for="aviso-zona-actual" class="zona-actual">Solo los de mi zona actual</label>
+                    <input type="checkbox" id="aviso-zona-actual" checked>
                 </div>
                 <div class="linea-lugares-guardados">
-                    <p class="zona-actual">Los de mis lugares guardados</p>
-                    <input type="checkbox">
+                    <label for="aviso-lugares-guardados" class="zona-actual">Los de mis lugares guardados</label>
+                    <input type="checkbox" id="aviso-lugares-guardados" checked>
                 </div>
                 <div class="comunicado">
-                    <p class="comunicado">No recibiras avisos de otras zonas<br>para evitar confusion</p>
+                    <p class="comunicado">No recibirás avisos de otras zonas<br>para evitar confusión</p>
                 </div>
 
             </div>
@@ -726,9 +787,49 @@
         </div>
 
 
+        <section id="fin-emergencia"><!--Fin de la emergencia-->
+            <div class="aviso-fin">
+                <h2>El peligro terminó · Es seguro volver</h2>
+            </div>
+
+            <div class="indeci-cabecera">
+                <img src="../assets/images/" alt="" width="64" height="64">
+                <div>
+                    <p><strong>INDECI</strong></p>
+                    <p class="detalle">Hoy 15:10 · Lima Centro</p>
+                </div>
+            </div>
+
+            <h3 class="titulo-volver">Antes de volver</h3>
+            <div class="fin-columnas">
+                <div class="antes-volver">
+                    <div class="item-volver">
+                        <input type="checkbox" id="volver-danos">
+                        <label for="volver-danos">Revisa que no haya daños visibles</label>
+                    </div>
+                    <div class="item-volver">
+                        <input type="checkbox" id="volver-escaleras">
+                        <label for="volver-escaleras">Usa las escaleras, no el ascensor</label>
+                    </div>
+                    <div class="item-volver">
+                        <input type="checkbox" id="volver-ficha">
+                        <label for="volver-ficha">Ten a mano tu ficha y contactos</label>
+                    </div>
+                </div>
+
+                <div class="contactos-informados">
+                    <h3>Tus contactos fueron informados</h3>
+                    <p>Estado actualizado a las 15:11</p>
+                </div>
+            </div>
+
+            <input type="button" class="boton-principal boton-entendido" value="Entendido">
+        </section>
+
     </main>
     
     <footer>
+        <p>Emite: INDECI · IGP · Defensa Civil — Contacto · Accesibilidad · Privacidad</p>
         <p>&copy; 2026 Alerta360. Todos los derechos reservados.</p>
     </footer>
     <script src="../js/main.js"></script>
