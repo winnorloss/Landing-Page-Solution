@@ -16,14 +16,58 @@
             <img src="../assets/images/logo-alerta360.png" alt="" width="40" height="40">
             <span>Alerta360</span>
         </a>
-        <nav aria-label="Principal">
-            <a href="#inicio">Inicio</a>
-            <a href="#mi-perfil">Mi perfil</a>
-            <a href="#simulacro">Simulacro</a>
-            <a href="#zonas-seguras">Zonas seguras</a>
-            <a href="#contactos">Contactos</a>
-            <a href="#familiares">Familiares</a>
-            <a href="#mi-perfil" class="boton boton-principal">Comenzar</a>
+        <nav class="menu-principal" aria-label="Principal">
+            <button type="button" class="menu-boton" aria-expanded="false" aria-controls="menu-lista">☰ Menú</button>
+
+            <ul class="menu-lista" id="menu-lista">
+                <li class="menu-item">
+                    <a href="#inicio" class="menu-enlace">Inicio <span aria-hidden="true">▾</span></a>
+                    <ul class="menu-panel">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#instrucciones-sin-conexion">Instrucciones sin conexión</a></li>
+                        <li><a href="#mis-lugares">Mis lugares</a></li>
+                        <li><a href="#fin-emergencia">Fin de la emergencia</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#mi-perfil" class="menu-enlace">Mi perfil <span aria-hidden="true">▾</span></a>
+                    <ul class="menu-panel">
+                        <li><a href="#mi-perfil">Mi perfil de avisos</a></li>
+                        <li><a href="#avisos-accesibles">Avisos accesibles</a></li>
+                        <li><a href="#ficha-apoyo">Mi ficha de apoyo</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#simulacro" class="menu-enlace">Simulacro <span aria-hidden="true">▾</span></a>
+                    <ul class="menu-panel">
+                        <li><a href="#preparate">Prepárate</a></li>
+                        <li><a href="#practicar-simulacro">Practicar simulacro</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#zonas-seguras" class="menu-enlace">Zonas seguras <span aria-hidden="true">▾</span></a>
+                    <ul class="menu-panel">
+                        <li><a href="#zonas-seguras">Zona más cercana</a></li>
+                        <li><a href="#ruta-pasos">Ruta paso a paso</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#contactos" class="menu-enlace">Contactos <span aria-hidden="true">▾</span></a>
+                    <ul class="menu-panel">
+                        <li><a href="#contactos">Contactos de confianza</a></li>
+                        <li><a href="#pedir-ayuda">Pedir ayuda sin hablar</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <a href="#familiares" class="menu-enlace">Familiares <span aria-hidden="true">▾</span></a>
+                    <ul class="menu-panel">
+                        <li><a href="#familiares">Estado de mis familiares</a></li>
+                        <li><a href="#enviar-frase">Enviar frase lista</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <a href="#mi-perfil" class="boton boton-principal boton-comenzar">Comenzar</a>
         </nav>
     </header>
 
@@ -376,7 +420,7 @@
                 </div>
             </section>
             
-            <div class="titulo-simulacro">
+            <div class="titulo-simulacro" id="practicar-simulacro">
                 <h2>ESTO ES UN SIMULACRO · Funciona con tus preferencias</h2>
             </div>
             <div class="simulacro-cuadros">
@@ -473,7 +517,7 @@
                         <button type="button"><strong>Losa deportiva</strong><span>900 m · Zona segura</span></button>
                     </div>
                     
-                    <h2 class="opciones-pasos">Ruta en texto (paso a paso)</h2>
+                    <h2 class="opciones-pasos" id="ruta-pasos">Ruta en texto (paso a paso)</h2>
                     <div class="opciones-pasos">
                         
                         <input type="button" value="1. Avanza 50 m al norte (vibración: avanzar)">
@@ -590,6 +634,49 @@
             
         </section>
 
+        <div class="pedir-ayuda" id="pedir-ayuda"><!--Pedir ayuda sin hablar/wireframe -->
+            <div class="titulo-ayuda">
+                <h2 class="titulo-ayuda">Pedir ayuda sin hablar</h2>
+                <p class="introduccion-ayuda">Con un toque se envía tu ubicación y tipo de ayuda por texto</p>
+            </div>
+            <div class="tipo-ayuda">
+                <button type="button" class="cuadro1">
+                    <span class="titulo1">BOMBEROS</span>
+                </button>
+
+                <button type="button" class="cuadro2">
+                    <span class="titulo2">AMBULANCIA</span>
+                </button>
+
+                <button type="button" class="cuadro1">
+                    <span class="titulo1">POLICÍA</span>
+                </button>
+
+            </div>
+            <div class="confirmacion-ayuda">
+
+                <div class="envio-solicitud">
+                    <h3 class="titulo-solicitud">Se enviará</h3>
+
+                    <div class="ubicacion-tipoayuda-ficha">
+                        <p class="ubicacion">Ubicación aproximada</p>
+                        <p class="tipoayuda">Tipo de ayuda</p>
+                        <p class="ficha">Mi ficha de apoyo</p>
+                    </div>
+
+                    <p class="conexion">Sin conexión: se guarda y reintenta</p>
+
+                </div>
+
+                <div class="estado-solicitud">
+                    <p class="estado-mensaje">Estado: Solicitud enviada<br>Ayuda en camino</p>
+                </div>
+            </div>
+            <div class="cancelar">
+                <input type="button" value="Cancelar" class="cancelar-boton">
+            </div>
+        </div>
+
         <section id="familiares"><!--Familiares-->
             <h2>Seguimiento de mis familiares</h2>
             <div class="alerta">
@@ -645,7 +732,7 @@
                     </div>
 
                 </div>
-                <div class="enviar-frase">
+                <div class="enviar-frase" id="enviar-frase">
                     <h2>Enviar frase lista</h2>
                     <input type="button" value="Voy por ti">
                     <input type="button" value="Quédate donde estás">
@@ -668,50 +755,7 @@
 
 
 
-        <div class="pedir-ayuda"><!--Pedir ayuda sin hablar/wireframe -->
-            <div class="titulo-ayuda">
-                <h2 class="titulo-ayuda">Pedir ayuda sin hablar</h2>
-                <p class="introduccion-ayuda">Con un toque se envía tu ubicación y tipo de ayuda por texto</p>
-            </div>
-            <div class="tipo-ayuda">
-                <button type="button" class="cuadro1">
-                    <span class="titulo1">BOMBEROS</span>
-                </button>
-
-                <button type="button" class="cuadro2">
-                    <span class="titulo2">AMBULANCIA</span>
-                </button>
-
-                <button type="button" class="cuadro1">
-                    <span class="titulo1">POLICÍA</span>
-                </button>
-
-            </div>
-            <div class="confirmacion-ayuda">
-
-                <div class="envio-solicitud">
-                    <h3 class="titulo-solicitud">Se enviará</h3>
-
-                    <div class="ubicacion-tipoayuda-ficha">
-                        <p class="ubicacion">Ubicación aproximada</p>
-                        <p class="tipoayuda">Tipo de ayuda</p>
-                        <p class="ficha">Mi ficha de apoyo</p>
-                    </div>
-
-                    <p class="conexion">Sin conexión: se guarda y reintenta</p>
-
-                </div>
-
-                <div class="estado-solicitud">
-                    <p class="estado-mensaje">Estado: Solicitud enviada<br>Ayuda en camino</p>
-                </div>
-            </div>
-            <div class="cancelar">
-                <input type="button" value="Cancelar" class="cancelar-boton">
-            </div>
-        </div>
-
-        <div class="lugares"><!--Mis lugares/wireframe-->
+        <div class="lugares" id="mis-lugares"><!--Mis lugares/wireframe-->
             
             <div class="encabezado-lugares">
                 <h2 class="titulo-lugares">Mis lugares</h2>
