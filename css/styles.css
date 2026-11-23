@@ -29,12 +29,12 @@
 
 /* #region 0 · BASE */
 
-/* Paleta de la guía de estilos (4.1.1) */
+
 :root {
   --azul: #12365A;          /* navegación, títulos, botón primario */
   --azul-oscuro: #0B2742;   /* botón primario pulsado, paneles de video */
   --azul-claro: #E4EDF5;    /* tarjetas, paneles, pestaña activa */
-  --fondo: #F3F6F9;         /* fondo de la página (60 %) */
+  --fondo: #F3F6F9;         /* fondo de la página */
   --blanco: #FFFFFF;
   --pizarra: #475569;       /* texto secundario y descripciones */
   --gris: #64748B;          /* bordes de campos, interruptor apagado */
@@ -1909,3 +1909,111 @@ input.agregar-lugares:hover { background: var(--azul-oscuro); }
   .lugares { grid-template-columns: 1fr; }
 }
 /* #endregion */
+
+
+.tarjeta-paso .pictograma-animado {
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+/* Botón de zona: icono a la izquierda, texto a la derecha */
+.opciones-zonas .zona {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.zona-icono {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: 50%;
+  background: var(--azul-claro);
+}
+
+/* En la zona resaltada (fondo azul claro), el círculo va en blanco */
+.opciones-zonas .zona:first-of-type .zona-icono { background: var(--blanco); }
+
+.zona-texto { display: block; }
+.zona-texto strong { display: block; }
+
+.acciones-ruta button {
+  width: 100%;
+  min-height: 52px;
+  margin: 0;
+}
+
+/* Botón con icono a la izquierda del texto (Escuchar) */
+.boton-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.boton-icono img {
+  width: 24px;
+  height: 24px;
+  flex: none;
+}
+.boton-icono:hover img { filter: brightness(0) invert(1); }
+
+.acciones-ruta button {
+  width: 100%;
+  min-height: 52px;
+  margin: 0;
+}
+.cuadro1::before,
+.cuadro2::before { content: none; }
+
+.icono-ayuda {
+  width: 72px;
+  height: 72px;
+  flex: none;
+}
+.cuadro1:hover .icono-ayuda,
+.cuadro2:hover .icono-ayuda { filter: brightness(0) invert(1); }
+
+/* Icono de INDECI: cuadro azul claro con el edificio */
+.indeci-cabecera img {
+  padding: 12px;
+  background: var(--azul-claro);
+  border-radius: 12px;
+}
+
+/* Icono de salir sobre la tarjeta azul marino */
+.icono-salir {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 12px;
+}
+
+/* Pictograma del paso: blanco directo sobre el panel azul, sin caja */
+.pasos-simulacro .pictograma {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+.pasos-simulacro .pictograma svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Pictograma arriba y texto debajo, todo centrado (como el mockup) */
+.pasos-simulacro .paso-contenido {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  gap: 16px;
+}
+.pasos-simulacro .pictograma {
+  width: 140px;
+}

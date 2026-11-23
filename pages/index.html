@@ -13,7 +13,7 @@
     
     <header class="cabecera">
         <a href="#inicio" class="logo">
-            <img src="../assets/images/logo-alerta360.png" alt="" width="40" height="40">
+            <img src="../assets/icons/favicon.png" alt="" width="40" height="40">
             <span>Alerta360</span>
         </a>
         <nav class="menu-principal" aria-label="Principal">
@@ -84,7 +84,7 @@
                 </div> 
 
                 <div class="mapa">
-                    <img src="" alt=""
+                    <img src="../assets/images/ejemplo-aviso.png" alt=""
                     width="750" height="500">
                 </div>
             </div>
@@ -94,25 +94,25 @@
             <div class="tarjetas cuatro">
                 
                     <article class="tarjeta">
-                        <img src="" alt="" width="48" height="48" class="icono-vibracion">
+                        <img src="../assets/icons/vibracion.png" alt="" width="48" height="48" class="icono-vibracion">
                         <h3>Vibración</h3>
                         <p>Patrón propio, incluso en silencio</p>
                     </article>
                 
                     <article class="tarjeta">
-                        <img src="" alt="" width="48" height="48" class="icono-luces">
+                        <img src="../assets/icons/luces.png" alt="" width="48" height="48" class="icono-luces">
                         <h3>Luces</h3>
                         <p>Destellos continuos</p>
                     </article>
                
                     <article class="tarjeta">
-                        <img src="" alt="" width="48" height="48" class="icono-voz">
+                        <img src="../assets/icons/voz.png" alt="" width="48" height="48" class="icono-voz">
                         <h3>Voz</h3>
                         <p>Lectura en voz alta</p>
                     </article>
                 
                     <article class="tarjeta">
-                        <img src="" alt="" width="48" height="48" class="icono-texto-facil">
+                        <img src="../assets/icons/texto-facil.png" alt="" width="48" height="48" class="icono-texto-facil">
                         <h3>Texto fácil</h3>
                         <p>Frases cortas y pictogramas</p>
                     </article>
@@ -148,15 +148,15 @@
 
                 <div class="tarjetas-pasos">
                     <article class="tarjeta tarjeta-paso">
-                        <div class="caja-imagen caja-cuadrada">Pictograma</div>
+                        <img class="pictograma-animado" src="../assets/images/agachate-fondo.png" alt=" ">
                         <p class="paso-texto">1. Agáchate y cúbrete</p>
                     </article>
                     <article class="tarjeta tarjeta-paso">
-                        <div class="caja-imagen caja-cuadrada">Pictograma</div>
+                        <img class="pictograma-animado" src="../assets/images/alejate-fondo.png" alt=" ">
                         <p class="paso-texto">2. Aléjate de las ventanas</p>
                     </article>
                     <article class="tarjeta tarjeta-paso">
-                        <div class="caja-imagen caja-cuadrada">Pictograma</div>
+                        <img class="pictograma-animado" src="../assets/images/sal-fondo.png" alt=" ">
                         <p class="paso-texto">3. Sal cuando pase el temblor</p>
                     </article>
                 </div>
@@ -427,7 +427,7 @@
                 <div class="bloque-indeci">
 
                     <div class="indeci-cabecera">
-                        <img src="../assets/images/" alt="" width="64" height="64">
+                        <img src="../assets/icons/channels4_profile.jpg" alt="" width="64" height="64">
                         <div>
                             <p><strong>INDECI</strong></p>
                             <p class="detalle">Hoy 14:32 · Lima Centro</p>
@@ -435,7 +435,11 @@
                     </div>
                     <h3>SISMO</h3>
                     <p><strong>Gravedad:</strong> ALTA</p>
-                <div class="sub-bloque-indeci">SALIR de forma segura</div>
+
+                    <div class="sub-bloque-indeci">
+                        <img class="icono-salir" src="../assets/icons/salir-fondo.png">
+                        SALIR de forma segura
+                    </div>
                 </div>
 
                 <div class="pasos-simulacro" aria-live="polite">
@@ -448,7 +452,7 @@
 
                     <div class="paso-contenido">
                         <div class="pictograma">
-                            <img src="../assets/images/" alt="" width="100" height="100">
+                            <img src="../assets/images/sal-blanco.png" alt="" width="100" height="100">
                         </div>
                         <div>
                             <p class="paso-texto"><strong>Sal del edificio por la escalera</strong></p>
@@ -512,9 +516,31 @@
                     
                     <div class="opciones-zonas">
                         <h2>Zona más cercana</h2>
-                        <button type="button"><strong>Parque Central</strong><span>250 m · Punto de encuentro</span></button>
-                        <button type="button"><strong>Colegio San Martín</strong><span>600 m · Zona segura</span></button>
-                        <button type="button"><strong>Losa deportiva</strong><span>900 m · Zona segura</span></button>
+                        <button type="button" class="zona">
+                            <img class="zona-icono" src="../assets/icons/ubicacion.png" alt="">
+                            <span class="zona-texto">
+                                <strong>Parque Central</strong>
+                                <span>250 m · Punto de encuentro</span>
+                            </span>
+                        </button>
+                        
+                        <button type="button" class="zona">
+                            <img class="zona-icono" src="../assets/icons/ubicacion.png" alt="">
+                            <span class="zona-texto">
+                                <strong>Parque Central</strong>
+                                <span>250 m · Punto de encuentro</span>
+                            </span>
+                        </button>
+                        
+                        <button type="button" class="zona">
+                            <img class="zona-icono" src="../assets/icons/ubicacion.png" alt="">
+                            <span class="zona-texto">
+                                <strong>Parque Central</strong>
+                                <span>250 m · Punto de encuentro</span>
+                            </span>
+                        </button>
+
+
                     </div>
                     
                     <h2 class="opciones-pasos" id="ruta-pasos">Ruta en texto (paso a paso)</h2>
@@ -554,7 +580,7 @@
                     </div>
                     <div class="acciones-ruta">
                         <div class="escuchar-ruta">
-                            <input type="button" value="Escuchar ruta">
+                            <button type="button" class="boton-icono"><img src="../assets/icons/voz.png" alt="">Escuchar ruta</button>
                         </div>
                         <div class="opciones-zonas">
                             <input type="button" value="Ruta alternativa">
@@ -641,14 +667,17 @@
             </div>
             <div class="tipo-ayuda">
                 <button type="button" class="cuadro1">
+                    <img class="icono-ayuda" src="../assets/icons/bomberos.png">
                     <span class="titulo1">BOMBEROS</span>
                 </button>
 
                 <button type="button" class="cuadro2">
+                    <img class="icono-ayuda" src="../assets/icons/ambulancia.png">
                     <span class="titulo2">AMBULANCIA</span>
                 </button>
 
                 <button type="button" class="cuadro1">
+                    <img class="icono-ayuda" src="../assets/icons/policia.png">
                     <span class="titulo1">POLICÍA</span>
                 </button>
 
@@ -765,7 +794,7 @@
                 <div class="opciones-lugares">
                     <div class="ubicacion1">
                             <div class="icono">
-                                <img src="../assets/icons/" alt="">
+                                <img src="../assets/icons/casa.png" alt="">
                             </div>
                             <div class="lugar-ubicacion1">
                                 <h3 class="nombre-ubicacion1">Casa</h3>
@@ -778,7 +807,7 @@
 
                     <div class="ubicacion2">
                             <div class="icono">
-                                <img src="../assets/icons/" alt="">
+                                <img src="../assets/icons/trabajo.png" alt="">
                             </div>
                             <div class="lugar-ubicacion2">
                                 <h3 class="nombre-ubicacion2">Trabajo</h3>
@@ -791,7 +820,7 @@
 
                     <div class="ubicacion3">
                             <div class="icono">
-                                <img src="../assets/icons/" alt="">
+                                <img src="../assets/icons/universidad.png" alt="">
                             </div>
                             <div class="lugar-ubicacion3">
                                 <h3 class="nombre-ubicacion3">Universidad</h3>
@@ -837,7 +866,7 @@
             </div>
 
             <div class="indeci-cabecera">
-                <img src="../assets/images/" alt="" width="64" height="64">
+                <img src="../assets/icons/channels4_profile.jpg" alt="" width="64" height="64">
                 <div>
                     <p><strong>INDECI</strong></p>
                     <p class="detalle">Hoy 15:10 · Lima Centro</p>
