@@ -148,15 +148,15 @@
 
                 <div class="tarjetas-pasos">
                     <article class="tarjeta tarjeta-paso">
-                        <img class="pictograma-animado" src="../assets/images/agachate-fondo.png" alt=" ">
+                        <img class="pictograma-animado" src="../assets/images/agachate-fondo.png" alt="Pictograma: persona agachada bajo una mesa">
                         <p class="paso-texto">1. Agáchate y cúbrete</p>
                     </article>
                     <article class="tarjeta tarjeta-paso">
-                        <img class="pictograma-animado" src="../assets/images/alejate-fondo.png" alt=" ">
+                        <img class="pictograma-animado" src="../assets/images/alejate-fondo.png" alt="Pictograma: persona alejándose de una ventana">
                         <p class="paso-texto">2. Aléjate de las ventanas</p>
                     </article>
                     <article class="tarjeta tarjeta-paso">
-                        <img class="pictograma-animado" src="../assets/images/sal-fondo.png" alt=" ">
+                        <img class="pictograma-animado" src="../assets/images/sal-fondo.png" alt="Pictograma: persona saliendo del edificio">
                         <p class="paso-texto">3. Sal cuando pase el temblor</p>
                     </article>
                 </div>
@@ -177,18 +177,18 @@
                     
                     <h3>1. Perfil rápido</h3>
                     <div class="tarjetas cuatro">
-                        <article class="tarjeta seleccionada">
+                        <div class="tarjeta seleccionada">
                             <h3>Auditivo</h3>
-                        </article>
-                        <article class="tarjeta">
+                        </div>
+                        <div class="tarjeta">
                             <h3>Visual</h3>
-                        </article>
-                        <article class="tarjeta">
+                        </div>
+                        <div class="tarjeta">
                             <h3>Cognitivo</h3>
-                        </article>
-                        <article class="tarjeta">
+                        </div>
+                        <div class="tarjeta">
                             <h3>Combinado</h3>
-                        </article>
+                        </div>
                     </div>
 
                     
@@ -228,7 +228,8 @@
                         <div class="botones">
                             <input type="button" value="Probar configuración">
                             <input type="button" class="boton-principal" value="Guardar">
-                        </div> 
+                            <input type="button" value="Restablecer" id="boton-restablecer">
+                        </div>
                     </div>
                 </div>                   
 
@@ -437,7 +438,7 @@
                     <p><strong>Gravedad:</strong> ALTA</p>
 
                     <div class="sub-bloque-indeci">
-                        <img class="icono-salir" src="../assets/icons/salir-fondo.png">
+                        <img class="icono-salir" src="../assets/icons/salir-fondo.png" alt="">
                         SALIR de forma segura
                     </div>
                 </div>
@@ -516,27 +517,27 @@
                     
                     <div class="opciones-zonas">
                         <h2>Zona más cercana</h2>
-                        <button type="button" class="zona">
+                        <button type="button" class="zona" aria-pressed="false">
                             <img class="zona-icono" src="../assets/icons/ubicacion.png" alt="">
                             <span class="zona-texto">
-                                <strong>Parque Central</strong>
-                                <span>250 m · Punto de encuentro</span>
+                                <strong>Parque de la Exposición</strong>
+                                <span>Lima Centro · Punto de encuentro</span>
                             </span>
                         </button>
                         
-                        <button type="button" class="zona">
+                        <button type="button" class="zona" aria-pressed="false">
                             <img class="zona-icono" src="../assets/icons/ubicacion.png" alt="">
                             <span class="zona-texto">
-                                <strong>Parque Central</strong>
-                                <span>250 m · Punto de encuentro</span>
+                                <strong>Plaza San Martín</strong>
+                                <span>Lima Centro · Punto de encuentro</span>
                             </span>
                         </button>
                         
-                        <button type="button" class="zona">
+                        <button type="button" class="zona" aria-pressed="false">
                             <img class="zona-icono" src="../assets/icons/ubicacion.png" alt="">
                             <span class="zona-texto">
-                                <strong>Parque Central</strong>
-                                <span>250 m · Punto de encuentro</span>
+                                <strong>Campo de Marte</strong>
+                                <span>Lima Centro · Punto de encuentro</span>
                             </span>
                         </button>
 
@@ -561,12 +562,19 @@
                 
                 <div class="lado-derecho-zonas">
                     <div class="descripcion-mapa-texto-img">
-                        <img src="../assets/images/" alt="">
+                        <iframe id="mapa-zonas"
+                            src="https://maps.google.com/maps?ll=-12.0612,-77.0380&z=14&output=embed"
+                            title="Mapa general de Lima Centro"
+                            loading="lazy"></iframe>
                         <div class="zoom-mapa">
                             <input type="button" value="+" aria-label="Acercar mapa">
                             <input type="button" value="−" aria-label="Alejar mapa">
                         </div>
 
+                    </div>
+                    <div class="ubicacion-mapa">
+                        <input type="button" id="boton-mi-ubicacion" class="boton-principal" value="📍 Usar mi ubicación">
+                        <p id="estado-ubicacion" role="status"></p>
                     </div>
                     <h2 class="titulo-descripcion">Descripción del mapa en texto</h2>
                     <div class="descripcion-mapa-texto">
@@ -667,17 +675,17 @@
             </div>
             <div class="tipo-ayuda">
                 <button type="button" class="cuadro1">
-                    <img class="icono-ayuda" src="../assets/icons/bomberos.png">
+                    <img class="icono-ayuda" src="../assets/icons/bomberos.png" alt="">
                     <span class="titulo1">BOMBEROS</span>
                 </button>
 
                 <button type="button" class="cuadro2">
-                    <img class="icono-ayuda" src="../assets/icons/ambulancia.png">
+                    <img class="icono-ayuda" src="../assets/icons/ambulancia.png" alt="">
                     <span class="titulo2">AMBULANCIA</span>
                 </button>
 
                 <button type="button" class="cuadro1">
-                    <img class="icono-ayuda" src="../assets/icons/policia.png">
+                    <img class="icono-ayuda" src="../assets/icons/policia.png" alt="">
                     <span class="titulo1">POLICÍA</span>
                 </button>
 

@@ -163,6 +163,40 @@ input[type="button"].boton-principal {
 .boton-principal:hover,
 input[type="button"].boton-principal:hover { background: var(--azul-oscuro); }
 
+/* Hover state: el botón cambia de color suavemente y se eleva un poco */
+input[type="button"],
+button,
+.boton {
+  /* 0.35 s con una curva que frena al final: el movimiento se ve más suave */
+  transition: background-color 0.35s ease, color 0.35s ease,
+              transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+@media (hover: hover) {
+  input[type="button"]:hover,
+  button:hover,
+  .boton:hover {
+    transform: translateY(-2px) scale(1.04);   /* sube y se agranda un 4 % */
+    box-shadow: 0 6px 14px rgba(11, 37, 69, 0.2);
+  }
+}
+
+/* Al hacer clic vuelve a bajar (sensación de presionar) */
+input[type="button"]:active,
+button:active,
+.boton:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: none;
+}
+
+/* Los botones desactivados no reaccionan al cursor */
+input[type="button"]:disabled,
+button:disabled {
+  transform: none;
+  box-shadow: none;
+}
+
 .acciones {
   display: flex;
   flex-wrap: wrap;
@@ -227,6 +261,13 @@ input[type="button"].boton-principal:hover { background: var(--azul-oscuro); }
 }
 
 .selector-emergencia button[aria-pressed="true"] {
+  background: var(--azul);
+  border-color: var(--azul);
+  color: var(--blanco);
+}
+
+/* Hover: fondo azul marino para que el texto blanco se lea */
+.selector-emergencia button:hover {
   background: var(--azul);
   border-color: var(--azul);
   color: var(--blanco);
@@ -545,6 +586,10 @@ input[type="button"].boton-principal:hover { background: var(--azul-oscuro); }
 }
 .perfil-config .tarjeta.seleccionada { background: var(--azul); }
 .perfil-config .tarjeta.seleccionada h3 { color: var(--blanco); }
+/* Las tarjetas de perfil se pueden elegir con clic o teclado */
+.perfil-config .tarjeta { cursor: pointer; transition: background-color 0.2s; }
+.perfil-config .tarjeta:not(.seleccionada):hover { background: var(--blanco); }
+.perfil-config .tarjeta:focus-visible { outline: 3px solid var(--azul); outline-offset: 2px; }
 
 .perfil-config .tarjeta h3 {
   margin: 0;
@@ -660,6 +705,32 @@ input[type="button"].boton-principal:hover { background: var(--azul-oscuro); }
   font-size: 1.5rem;
   font-weight: 700;
 }
+
+/* HU-17: la vista previa cambia de tamaño con el control "Tamaño de letra" */
+.telefono { font-size: calc(1.125rem * var(--escala-vista, 1)); }
+.telefono h4 { font-size: calc(1.75rem * var(--escala-vista, 1)); }
+.vista-previa-salir { font-size: calc(1.5rem * var(--escala-vista, 1)); overflow-wrap: anywhere; }
+
+/* HU-17: destello de prueba (máximo 1 por segundo) */
+.telefono { border-radius: var(--radio-control); transition: background-color 0.15s; }
+.telefono.destello { background: var(--ambar); }
+
+/* HU-17: mensaje después de Probar, Guardar o Restablecer */
+.mensaje-perfil { margin: 16px 0 0; font-weight: 700; }
+.mensaje-perfil:empty { display: none; }
+
+/* HU-17: contraste alto. Cambia los colores de la guía por negro y blanco.
+   Se aplica a toda la página (en <html>) o solo a la vista previa. */
+.alto-contraste {
+  --azul: #000000;
+  --azul-oscuro: #000000;
+  --azul-claro: #FFFFFF;
+  --fondo: #FFFFFF;
+  --pizarra: #000000;
+  --gris: #000000;
+  --linea: #000000;
+}
+#vista-previa-simulacro.alto-contraste { outline: 2px solid #000000; }
 
 @media (max-width: 800px) {
   .perfil { grid-template-columns: 1fr; }
@@ -801,11 +872,12 @@ input[type="button"].boton-principal:hover { background: var(--azul-oscuro); }
   border: none;
   border-radius: 50%;
   background: var(--blanco);
+  transition: transform 0.2s;   /* misma animación que el .toggle */
 }
 
 .interruptor input:checked + .interruptor-pista { background: var(--azul); border-color: var(--azul); }
 
-.interruptor input:checked + .interruptor-pista::after { left: 27px; }
+.interruptor input:checked + .interruptor-pista::after { transform: translateX(24px); }
 
 .interruptor input:focus-visible + .interruptor-pista {
   outline: 3px solid var(--azul);
@@ -841,7 +913,7 @@ input[type="button"].boton-principal:hover { background: var(--azul-oscuro); }
 /* Fila de dos cuadros: INDECI + Pasos */
 .simulacro-cuadros {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
   align-items: stretch;
 }
@@ -940,15 +1012,21 @@ input[type="button"].boton-principal:hover { background: var(--azul-oscuro); }
 
 .botones-paso {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-top: 20px;
 }
 
 .botones-paso input { width: 100%; }
+/* "Siguiente" (botón principal) con borde blanco para que se note sobre el panel azul */
+.botones-paso input[type="button"].boton-principal { border: 2px solid var(--blanco); }
 /* Sobre el panel azul, el hover invierte a blanco para seguir viéndose */
-.botones-paso input:hover { background: var(--blanco); color: var(--azul); }
+.botones-paso input:not(:disabled):hover { background: var(--blanco); color: var(--azul); }
 .botones-paso input:focus-visible { outline-color: var(--blanco); box-shadow: none; }
+/* HU-11: "Atrás" desactivado en el primer paso */
+.botones-paso input:disabled { opacity: 0.5; cursor: not-allowed; }
+/* La barra de progreso crece suavemente al cambiar de paso */
+.progreso span { transition: width 0.3s ease; }
 
 /* Fila de tres cuadros: lista, consejo y recordatorio */
 .avisos-simulacro {
@@ -999,7 +1077,7 @@ input[type="button"].boton-principal:hover { background: var(--azul-oscuro); }
   .avisos-simulacro { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 800px) {
-  .simulacro-cuadros { grid-template-columns: 1fr; }
+  .simulacro-cuadros { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 600px) {
   .avisos-simulacro { grid-template-columns: 1fr; }
@@ -1120,9 +1198,11 @@ textarea[aria-invalid="true"] { border-color: var(--rojo); }
   font-weight: 400;
 }
 .opciones-zonas button:hover span { color: var(--blanco); }
-/* La zona más cercana va resaltada: azul claro con borde azul marino */
-.opciones-zonas button:first-of-type { background: var(--azul-claro); border-color: var(--azul); }
-.opciones-zonas button:first-of-type:hover { background: var(--azul); }
+/* La zona elegida va resaltada: azul claro con borde azul marino */
+.opciones-zonas button[aria-pressed="true"] { background: var(--azul-claro); border-color: var(--azul); }
+.opciones-zonas button[aria-pressed="true"]:hover { background: var(--azul); }
+/* Hover de las demás zonas: fondo azul marino con texto blanco */
+.opciones-zonas button:hover { background: var(--azul); border-color: var(--azul); color: var(--blanco); }
 .acciones-ruta .opciones-zonas,
 .acciones-ruta .escuchar-ruta { margin-bottom: 0; }
 
@@ -1149,6 +1229,8 @@ h2.opciones-pasos {
   text-align: left;
   white-space: normal;
 }
+/* Hover de los pasos: fondo azul marino con texto blanco */
+.opciones-pasos input[type="button"]:hover { background: var(--azul); color: var(--blanco); }
 
 
 
@@ -1259,6 +1341,20 @@ h2.opciones-pasos {
   object-fit: cover;
 }
 
+/* Mapa de Google Maps: ocupa todo el recuadro, igual que la imagen */
+.descripcion-mapa-texto-img iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Botón "Usar mi ubicación" y mensaje debajo del mapa */
+.ubicacion-mapa { margin-top: 12px; }
+.ubicacion-mapa p { margin: 8px 0 0; font-weight: 700; }
+.ubicacion-mapa p:empty { display: none; }
+
 /* Caja de texto debajo del mapa: alto propio, no crece */
 .descripcion-mapa-texto {
   flex: 0 0 auto;
@@ -1331,7 +1427,7 @@ h2.opciones-pasos {
   font-weight: 700;
 }
 
-.lista-contactos .accion:hover { background: transparent; color: var(--azul); text-decoration: underline; }
+.lista-contactos .accion:hover { background: transparent; color: var(--azul); text-decoration: underline; transform: none; box-shadow: none; }
 
 .contactos-cuadro{
   display: grid;
@@ -1557,6 +1653,15 @@ footer a { color: var(--azul); }
 
 .lineas-vista span:nth-child(3n + 2) { width: 95%; }
 .lineas-vista span:nth-child(3n) { width: 90%; }
+
+/* Texto de la vista previa (lo escribe el JavaScript) */
+.contenido-vista p { margin: 0 0 12px; overflow-wrap: anywhere; }
+.contenido-vista strong { color: var(--azul); }
+.aviso-no-compartir { font-style: italic; }
+
+/* Mensaje después de Guardar o Ver vista previa */
+.mensaje-ficha { margin: 12px 0 0; font-weight: 700; }
+.mensaje-ficha:empty { display: none; }
 
 @media (max-width: 800px) {
   .ficha-rejilla { grid-template-columns: 1fr; }
@@ -1938,8 +2043,8 @@ input.agregar-lugares:hover { background: var(--azul-oscuro); }
   background: var(--azul-claro);
 }
 
-/* En la zona resaltada (fondo azul claro), el círculo va en blanco */
-.opciones-zonas .zona:first-of-type .zona-icono { background: var(--blanco); }
+/* En la zona elegida (fondo azul claro), el círculo va en blanco */
+.opciones-zonas .zona[aria-pressed="true"] .zona-icono { background: var(--blanco); }
 
 .zona-texto { display: block; }
 .zona-texto strong { display: block; }
@@ -2017,3 +2122,148 @@ input.agregar-lugares:hover { background: var(--azul-oscuro); }
 .pasos-simulacro .pictograma {
   width: 140px;
 }
+
+/* #region 13 · BOTONES CONECTADOS (mensajes, estados y pantallas nuevas) */
+
+/* Lo que el JavaScript oculta con "hidden" debe ocultarse aunque tenga display */
+[hidden] { display: none !important; }
+
+/* Mensajes de estado que aparecen debajo de los botones */
+.mensaje-estado { margin: 12px 0 0; font-weight: 700; color: var(--azul); }
+.mensaje-estado:empty { display: none; }
+
+/* Frase en pantalla grande (Avisos accesibles) */
+.pantalla-frase {
+  width: min(90vw, 900px);
+  padding: 40px 24px;
+  border: none;
+  border-radius: var(--radio);
+  text-align: center;
+}
+.pantalla-frase::backdrop { background: rgba(11, 37, 69, 0.85); }
+.frase-grande {
+  margin: 0 0 24px;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--azul);
+}
+.frase-escribir {
+  display: block;
+  width: 100%;
+  margin: 0 0 24px;
+  padding: 12px;
+  border: 2px solid var(--azul);
+  border-radius: var(--radio-control);
+  font: inherit;
+  font-size: 1.5rem;
+}
+
+/* Lista completa del simulacro */
+.lista-completa { margin: 16px 0 0; padding-left: 24px; }
+.lista-completa li { margin-bottom: 8px; }
+
+/* Paso de la ruta ya hecho: azul marino con franja ámbar a la izquierda */
+.opciones-pasos input[type="button"][aria-pressed="true"] {
+  background: var(--azul);
+  color: var(--blanco);
+  font-weight: 700;
+  box-shadow: inset 8px 0 0 var(--ambar);
+}
+
+/* Tipo de ayuda elegido: igual que el hover */
+.tipo-ayuda button[aria-pressed="true"] { background: var(--azul); color: var(--blanco); }
+.tipo-ayuda button[aria-pressed="true"] .icono-ayuda { filter: brightness(0) invert(1); }
+
+/* Campos al editar un lugar */
+.campo-lugar {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  margin: 4px 0;
+  padding: 8px 12px;
+  border: 1px solid var(--gris);
+  border-radius: var(--radio-control);
+  font: inherit;
+}
+/* #endregion */
+
+/* #region 14 · VIDEOS DE PREPÁRATE */
+/* El video ocupa el mismo recuadro 16:9 que el panel anterior */
+video.caja-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background: var(--azul-claro);
+  object-fit: cover;
+}
+
+/* "Texto del video": lo que dice el video, para quien no puede verlo */
+.texto-video { margin-top: 8px; font-size: 1rem; }
+.texto-video summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--azul);
+  cursor: pointer;
+}
+.texto-video ul { margin: 0; padding-left: 20px; }
+/* #endregion */
+
+
+/* #region 15 · CELULAR (pantallas de hasta 600 px) */
+
+/* Evita que el celular agrande el texto por su cuenta al girar la pantalla */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+/* Campos con letra de al menos 16 px: así el iPhone no hace zoom al escribir */
+input[type="text"], select, textarea { font-size: max(1rem, 16px); }
+
+/* Quita el destello gris al tocar en Android */
+button, input, a, summary, .tarjeta { -webkit-tap-highlight-color: transparent; }
+
+/* Mapa: transición suave al acercar o alejar (ver dibujarMapa en main.js) */
+.descripcion-mapa-texto-img iframe {
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.descripcion-mapa-texto-img iframe.mapa-cargando { opacity: 0; }
+.descripcion-mapa-texto-img iframe.mapa-acercando { transform: scale(1.25); }
+.descripcion-mapa-texto-img iframe.mapa-alejando { transform: scale(0.8); }
+
+@media (max-width: 600px) {
+  /* Margen lateral de 16 px (antes 24 px) para aprovechar la pantalla */
+  main { padding: 24px 16px; }
+
+  /* Sismo / Incendio / Inundación: los 3 en una fila */
+  .selector-emergencia { flex-wrap: nowrap; gap: 8px; }
+  .selector-emergencia button { flex: 1 1 0; min-width: 0; padding: 10px 6px; font-size: 1rem; }
+
+  /* Buscador de zonas: el campo arriba y "Buscar" debajo, a lo ancho */
+  .busqueda-distrito { flex-direction: column; align-items: stretch; }
+  .busqueda-distrito .busqueda { width: 100%; }
+
+  /* Voz y velocidad: una debajo de la otra (antes se cortaba "Velocidad") */
+  .campo-doble { grid-template-columns: 1fr; }
+
+  /* Botones de acciones a lo ancho: más fáciles de tocar con el pulgar */
+  .acciones, .botones, .botones-simulacro { flex-direction: column; align-items: stretch; }
+  .acciones > *, .botones > *, .botones-simulacro > * { width: 100%; }
+
+  /* Pedir ayuda: tarjetas más bajas para ver las 3 sin bajar tanto */
+  .tipo-ayuda button { min-height: 0; padding: 16px; }
+
+  /* Mapa más alto en el celular */
+  .descripcion-mapa-texto-img { min-height: 320px; }
+
+  /* Estados de familiares: letra de al menos 14 px */
+  .estado p { font-size: 0.9rem; }
+
+  /* Atrás / Siguiente: menos relleno para que quepan en pantallas de 320 px */
+  .botones-paso input { padding: 12px 8px; }
+
+  /* Frase en pantalla grande ocupa casi toda la pantalla */
+  .pantalla-frase { width: 94vw; padding: 32px 16px; }
+}
+/* #endregion */
